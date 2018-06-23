@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import "./Forms.js"
+import "./Forms.css"
 
 class Forms extends Component{
 	render(){
