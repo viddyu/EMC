@@ -1,22 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Forms from "./components/forms/Forms.js";
+import React from "react";
+import Form from "./components/Form";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <br/>
-        <br/>
-        <Forms/>
-      </div>
-    );
-  }
-}
+const App = () => <Form />;
 
 export default App;
