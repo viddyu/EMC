@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import Form from "./components/Form";
-
-const App = () => <Form />;
-=======
 import React, { Component } from "react";
 import Forms from "./components/forms/Forms.js";
 import "./App.css";
@@ -22,6 +16,5 @@ class App extends Component {
     );
   }
 }
->>>>>>> 982e290259b3e6fb0f975277d8534fb26e856aec
 
 export default App;
