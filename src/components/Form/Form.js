@@ -34,6 +34,7 @@ class Form extends Component {
             firstName: "",
             lastName: "",
             age: "",
+            gender: "",
             bloodType: "",
             heartRate: "",
             breathRate: "",
@@ -49,6 +50,8 @@ class Form extends Component {
                     Patient {this.state.firstName} {this.state.lastName}
                     <br></br>
                     Age {this.state.age}
+                    <br></br>
+                    Gender {this.state.gender}
                     <br></br>
                     Blood-Type {this.state.bloodType}
                     <br></br>
@@ -79,6 +82,13 @@ class Form extends Component {
                         onChange={this.handleInputChange}
                         type="text"
                         placeholder="Age"
+                    />
+                     <input
+                        value={this.state.gender}
+                        name="gender"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Gender"
                     />
                     <input
                         value={this.state.bloodType}
