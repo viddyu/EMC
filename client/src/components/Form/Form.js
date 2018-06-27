@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { List, ListItem } from "../../components/List";
+import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Form extends Component {
@@ -16,23 +18,23 @@ class Form extends Component {
         notes: ""
     };
 
-    // loadEMCs = () => {
-    //     API.getEMC()
-    //         .then(res =>
-    //             this.setState({
-    //                 emcs: res.data,
-    //                 firstName: "",
-    //                 lastName: "",
-    //                 age: "",
-    //                 bloodType: "",
-    //                 heartRate: "",
-    //                 breathRate: "",
-    //                 bloodPressure: "",
-    //                 notes: ""
-    //             })
-    //         )
-    //         .catch(err => console.log(err));
-    // };
+    loadEMCs = () => {
+        API.getEMC()
+            .then(res =>
+                this.setState({
+                    emcs: res.data,
+                    firstName: "",
+                    lastName: "",
+                    age: "",
+                    bloodType: "",
+                    heartRate: "",
+                    breathRate: "",
+                    bloodPressure: "",
+                    notes: ""
+                })
+            )
+            .catch(err => console.log(err));
+    };
 
     // componentDidMount() {
     //     this.loadEMCs();
@@ -83,6 +85,7 @@ class Form extends Component {
                 breathRate: this.state.breathRate,
                 bloodPressure: this.state.bloodPressure,
             })
+                // .then(res => this.loadEMCs())
                 .then(res => this.loadEMCs())
                 .catch(err => console.log(err));
         } else {
@@ -193,6 +196,18 @@ class Form extends Component {
                         // disabled={!(this.state.firstName)}
                         onClick={this.handleFormSubmit}>Submit</button>
                 </form>
+                <List>
+                    {this.state.emcs.map(emc => (
+                        <ListItem key={emc._id}>
+                            <Link to={"/emcs/" + emc._id}>
+                                <strong>
+                                    {emc.title} by {emc.author}
+                                </strong>
+                            </Link>
+                            {/* <DeleteBtn onClick={() => this.deleteEMC(emc._id)} /> */}
+                        </ListItem>
+                    ))}
+                </List>
             </div>
         );
     }

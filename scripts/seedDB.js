@@ -21,6 +21,15 @@ const emcSeed = [
         breathRate: "0",
         bloodPressure: "0",
         notes: "Test"
+    }, {
+        firstName: "Test 2",
+        lastName: "Test 2",
+        age: "1",
+        bloodType: "1",
+        heartRate: "1",
+        breathRate: "1",
+        bloodPressure: "1",
+        notes: "Test 2"
     }
 ];
 

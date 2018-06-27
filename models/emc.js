@@ -5,6 +5,7 @@ const emcSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     age: Number,
+    gender: { type: String, enum: ['Male', 'Female'], required: false },
     bloodType: String,
     heartRate: { type: String, required: true },
     breathRate: { type: String, required: true },
