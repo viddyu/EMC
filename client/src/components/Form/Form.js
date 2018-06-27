@@ -16,33 +16,33 @@ class Form extends Component {
         notes: ""
     };
 
-    loadEMCs = () => {
-        API.getEMC()
-            .then(res =>
-                this.setState({
-                    emcs: res.data,
-                    firstName: "",
-                    lastName: "",
-                    age: "",
-                    bloodType: "",
-                    heartRate: "",
-                    breathRate: "",
-                    bloodPressure: "",
-                    notes: ""
-                })
-            )
-            .catch(err => console.log(err));
-    };
+    // loadEMCs = () => {
+    //     API.getEMC()
+    //         .then(res =>
+    //             this.setState({
+    //                 emcs: res.data,
+    //                 firstName: "",
+    //                 lastName: "",
+    //                 age: "",
+    //                 bloodType: "",
+    //                 heartRate: "",
+    //                 breathRate: "",
+    //                 bloodPressure: "",
+    //                 notes: ""
+    //             })
+    //         )
+    //         .catch(err => console.log(err));
+    // };
 
     // componentDidMount() {
     //     this.loadEMCs();
     // }
 
-    deleteEMC = id => {
-        API.deleteEMC(id)
-            .then(res => this.loadEMCs())
-            .catch(err => console.log(err));
-    };
+    // deleteEMC = id => {
+    //     API.deleteEMC(id)
+    //         .then(res => this.loadEMCs())
+    //         .catch(err => console.log(err));
+    // };
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change

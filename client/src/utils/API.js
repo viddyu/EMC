@@ -8,8 +8,8 @@ export default {
     },
 
     // Gets a record of EMCs with a given id
-    getEMC: function () {
-        return axios.get("/api/EMCs")
+    getEMC: function (id) {
+        return axios.get("/api/EMCs/" + id)
     },
 
     // Deletes the EMCs with the given id
