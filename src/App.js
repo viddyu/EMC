@@ -9,9 +9,9 @@ class App extends Component {
         <header>
           <h1 className="App-title">Emergency Medical Communication</h1>
         </header>
-        <br/>
-        <br/>
-        <Forms/>
+        <br />
+        <br />
+        <Forms />
       </div>
     );
   }
