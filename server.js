@@ -5,7 +5,7 @@ const io = require("socket.io")(http);
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.use(express.static(__dirname + "/src/components/chat/"));
 

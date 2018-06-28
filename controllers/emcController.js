@@ -15,5 +15,6 @@ module.exports = {
             .create(req.body)
             .then(EMCdata => res.json(EMCdata))
             .catch(err => res.status(422).json(err));
+        console.log('db.EMC');
     }
 };
