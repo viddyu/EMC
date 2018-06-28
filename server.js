@@ -5,19 +5,8 @@ const io = require("socket.io")(http);
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const port = process.env.PORT || 3002;
 
-app.use(express.static(__dirname + "/src/components/chat/"));
-
-io.on("connection", function(socket){
-	console.log("Someone connected");
-  socket.on("chat message", function(msg){
-    io.emit("chat message", msg);
-  });
-});
-
-
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,10 +23,6 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");
 
 // Start the API server
-app.listen(port, function(){
-  console.log("Connected to port " + port);
-});
-
 app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
