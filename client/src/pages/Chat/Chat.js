@@ -14,6 +14,7 @@ class Chat extends Component {
                 </form>
                 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
                 {/* <script>
                     $(function () => {
                     var socket = io();
@@ -28,9 +29,8 @@ class Chat extends Component {
                 });
             });
             </script> */}
-            </body>
 
-            // <div>This is where the chat goes</div>
+            </body>
 
         )
     }
