@@ -66,29 +66,6 @@ class Form extends Component {
                 .catch(err => console.log(err));
         }
 
-        // activiting these features results in a delay between MongoDB and our Records Display
-        // Standard alert for missing an entry is fine
-
-        // else if (!this.state.firstName) {
-        //     alert('Please fill in the First Name entry.')
-        // }
-
-        // else if (!this.state.lastName) {
-        //     alert('Please fill in the Last Name entry.')
-        // }
-
-        // else if (!this.state.heartRate) {
-        //     alert('Please fill in the Heart Rate entry.')
-        // }
-
-        // else if (!this.state.breathRate) {
-        //     alert('Please fill in the Breath Rate entry.')
-        // }
-
-        // else if (!this.state.bloodPressure) {
-        //     alert('Please fill in the Blood Pressure entry.')
-        // }
-
         else {
             alert('You left one or more EMC entries blank. \nPlease provide all of the EMC information.')
         }
