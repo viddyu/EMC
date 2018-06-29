@@ -1,6 +1,14 @@
 {
   "name": "mern",
   "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^5.0.17",
+    "socket.io": "^2.1.1"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -17,11 +25,5 @@
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
-  },
-  "dependencies": {
-    "axios": "^0.16.2",
-    "body-parser": "^1.17.2",
-    "express": "^4.15.4",
-    "mongoose": "^5.0.17"
   }
 }
