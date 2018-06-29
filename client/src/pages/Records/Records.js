@@ -51,7 +51,7 @@ class Records extends Component {
 
     render() {
 
-console.log(this.state.emcs);
+        console.log(this.state.emcs);
 
         return (
             <Col size="md-6 sm-12">
@@ -65,25 +65,22 @@ console.log(this.state.emcs);
                                 <Link to={"/emcs/" + emc._id}>
                                     <strong>
 
-                                        -----------------------------------------------------------
+                                        First Name: {emc.firstName}
+                                        <br></br>
+                                        Last Name: {emc.lastName}
+                                        <br></br>
+                                        Age: {emc.age}
+                                        <br></br>
+                                        Gender: {/* {emc.gender} */}
+                                        <br></br>
+                                        Blood Type: {emc.bloodType}
+                                        <br></br>
+                                        Heart Rate: {emc.heartRate}
+                                        <br></br>
+                                        Breath Rate: {emc.breathRate}
+                                        <br></br>
+                                        Blood Pressure: {emc.bloodPressure}
 
-                                        {emc.firstName}
-                                        <br></br>
-                                        {emc.lastName}
-                                        <br></br>
-                                        {emc.age}
-                                        <br></br>
-                                        {/* {emc.gender} */}
-                                        <br></br>
-                                        {emc.bloodType}
-                                        <br></br>
-                                        {emc.heartRate}
-                                        <br></br>
-                                        {emc.breathRate}
-                                        <br></br>
-                                        {emc.bloodPressure}
-
-                                        -----------------------------------------------------------
 
                                     </strong>
                                 </Link>
