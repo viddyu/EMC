@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Link } from "react-router-dom";
 import "./Form.css";
+import App from "../../App";
 
 class Form extends Component {
     // Setting the component's initial state
@@ -11,40 +12,13 @@ class Form extends Component {
         firstName: "",
         lastName: "",
         age: "",
+        // gender: "",
         bloodType: "",
         heartRate: "",
         breathRate: "",
         bloodPressure: "",
         notes: ""
     };
-
-    loadEMCs = () => {
-        API.getEMC()
-            .then(res =>
-                this.setState({
-                    emcs: res.data,
-                    firstName: "",
-                    lastName: "",
-                    age: "",
-                    bloodType: "",
-                    heartRate: "",
-                    breathRate: "",
-                    bloodPressure: "",
-                    notes: ""
-                })
-            )
-            .catch(err => console.log(err));
-    };
-
-    // componentDidMount() {
-    //     this.loadEMCs();
-    // }
-
-    // deleteEMC = id => {
-    //     API.deleteEMC(id)
-    //         .then(res => this.loadEMCs())
-    //         .catch(err => console.log(err));
-    // };
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
@@ -99,7 +73,7 @@ class Form extends Component {
             firstName: "",
             lastName: "",
             age: "",
-            gender: "",
+            // gender: "",
             bloodType: "",
             heartRate: "",
             breathRate: "",
@@ -111,13 +85,20 @@ class Form extends Component {
     render() {
         // Notice how each input has a 'value', 'name', and 'onChange' prop
         return (
+
             <div>
+
+
+                <header>
+                    <h1 className="App-title">Emergency Medical Communication</h1>
+                </header>
+
                 <p>
                     Patient {this.state.firstName} {this.state.lastName}
                     <br></br>
                     Age {this.state.age}
                     <br></br>
-                    Gender {this.state.gender}
+                    {/* Gender {this.state.gender} */}
                     <br></br>
                     Blood-Type {this.state.bloodType}
                     <br></br>
@@ -151,13 +132,13 @@ class Form extends Component {
                         type="text"
                         placeholder="Age"
                     />
-                    <input
+                    {/* <input
                         value={this.state.gender}
                         name="gender"
                         onChange={this.handleInputChange}
                         type="text"
                         placeholder="Gender"
-                    />
+                    /> */}
                     <input
                         value={this.state.bloodType}
                         name="bloodType"

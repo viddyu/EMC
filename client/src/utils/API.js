@@ -4,7 +4,7 @@ export default {
 
     // Get all EMC records
     getEMCs: function () {
-        return axios.get("/api/emcs")
+        return axios.get("/api/emcs");
     },
 
     // Gets a record of EMCs with a given id

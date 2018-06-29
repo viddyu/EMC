@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import Forms from "./components/Form/Form.js";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar.js";
+import Records from "./pages/Records/Records.js";
+import Form from "./components/Form/Form.js";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1 className="App-title">Emergency Medical Communication</h1>
-        </header>
-        <br />
-        <br />
-        <Forms />
-      </div>
-    );
-  }
-}
+const App = () => (
+
+  <Router>
+    <div>
+      <Navbar />
+      <Route exact path="/" component={Form} />
+      <Route exact path="/records" component={Records} />
+    </div>
+  </Router>
+
+);
 
 export default App;

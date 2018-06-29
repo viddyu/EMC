@@ -5,4 +5,7 @@ const emcController = require("../../controllers/emcController");
 router.route("/")
     .post(emcController.create);
 
+router.route("/")
+    .get(emcController.findAll);
+
 module.exports = router;
