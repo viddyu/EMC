@@ -12,7 +12,7 @@ class Records extends Component {
         firstName: "",
         lastName: "",
         age: "",
-        // gender: "",
+        gender: "",
         bloodType: "",
         heartRate: "",
         breathRate: "",
@@ -28,7 +28,7 @@ class Records extends Component {
                     firstName: "",
                     lastName: "",
                     age: "",
-                    // gender: "",
+                    gender: "",
                     bloodType: "",
                     heartRate: "",
                     breathRate: "",
@@ -71,7 +71,7 @@ class Records extends Component {
                                         <br></br>
                                         Age: {emc.age}
                                         <br></br>
-                                        Gender: {/* {emc.gender} */}
+                                        Gender: {emc.gender}
                                         <br></br>
                                         Blood Type: {emc.bloodType}
                                         <br></br>

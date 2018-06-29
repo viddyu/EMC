@@ -12,7 +12,7 @@ class Form extends Component {
         firstName: "",
         lastName: "",
         age: "",
-        // gender: "",
+        gender: "",
         bloodType: "",
         heartRate: "",
         breathRate: "",
@@ -36,14 +36,15 @@ class Form extends Component {
 
         if (this.state.firstName &&
             this.state.lastName &&
-            this.state.bloodPressure &&
+            this.state.heartRate &&
             this.state.breathRate &&
-            this.state.heartRate) {
+            this.state.bloodPressure) {
 
             alert(`Submitted:
             First name: ${this.state.firstName}\n 
             Last name: ${this.state.lastName}\n
             Age: ${this.state.age}\n
+            Gender: ${this.state.gender}\n
             Blood Type: ${this.state.bloodType}\n
             Heart Rate: ${this.state.heartRate}\n
             Breath Rate: ${this.state.breathRate}\n
@@ -54,6 +55,7 @@ class Form extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 age: this.state.age,
+                gender: this.state.gender,
                 bloodType: this.state.bloodType,
                 heartRate: this.state.heartRate,
                 breathRate: this.state.breathRate,
@@ -62,7 +64,32 @@ class Form extends Component {
                 // .then(res => this.loadEMCs())
                 .then(res => this.loadEMCs())
                 .catch(err => console.log(err));
-        } else {
+        }
+
+        // activiting these features results in a delay between MongoDB and our Records Display
+        // Standard alert for missing an entry is fine
+
+        // else if (!this.state.firstName) {
+        //     alert('Please fill in the First Name entry.')
+        // }
+
+        // else if (!this.state.lastName) {
+        //     alert('Please fill in the Last Name entry.')
+        // }
+
+        // else if (!this.state.heartRate) {
+        //     alert('Please fill in the Heart Rate entry.')
+        // }
+
+        // else if (!this.state.breathRate) {
+        //     alert('Please fill in the Breath Rate entry.')
+        // }
+
+        // else if (!this.state.bloodPressure) {
+        //     alert('Please fill in the Blood Pressure entry.')
+        // }
+
+        else {
             alert('You left one or more EMC entries blank. \nPlease provide all of the EMC information.')
         }
 
@@ -73,7 +100,7 @@ class Form extends Component {
             firstName: "",
             lastName: "",
             age: "",
-            // gender: "",
+            gender: "",
             bloodType: "",
             heartRate: "",
             breathRate: "",
@@ -135,13 +162,13 @@ class Form extends Component {
                             type="text"
                             placeholder="Age"
                         />
-                        {/* <input
-                        value={this.state.gender}
-                        name="gender"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Gender"
-                    /> */}
+                        <input
+                            value={this.state.gender}
+                            name="gender"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Male, Female, or blank"
+                        />
                         <input
                             value={this.state.bloodType}
                             name="bloodType"

@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const http = require("http").Server(app);
+const io = require("socket.io")(http);
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
@@ -19,6 +21,13 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");
+
+io.on("connection", function (socket) {
+    console.log("Someone connected");
+    socket.on("chat message", function (msg) {
+        io.emit("chat message", msg);
+    });
+});
 
 // Start the API server
 app.listen(PORT, function () {

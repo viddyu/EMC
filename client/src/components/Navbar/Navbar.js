@@ -13,8 +13,7 @@ const Navbar = () => (
                 Form
       </Link>
         </li>
-        <li className="nav-item">
-        </li>
+
         <li className="nav-item">
             <Link
                 to="/records"
@@ -23,6 +22,17 @@ const Navbar = () => (
                 }
             >
                 Records
+      </Link>
+        </li>
+
+        <li className="nav-item">
+            <Link
+                to="/chat"
+                className={
+                    window.location.pathname === "/chat" ? "nav-link active" : "nav-link"
+                }
+            >
+                Chat
       </Link>
         </li>
     </ul>
