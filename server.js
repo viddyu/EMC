@@ -1,12 +1,30 @@
 const express = require("express");
-const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+const http = require("http");
+const WebSocketServerWrapper = require("ws-server-wrapper");
+const WebSocketServer = require("ws").Server;
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
+
+const app = express();
+const server = http.createServer(app);
+// Create WebSocketServer
+const wss = new WebSocketServerWrapper(
+    new WebSocketServer({server, path: "/socket"}) );
+
+// Handle chat message
+wss.on("chatMessage", function(msg) {
+    console.log("Incoming message", msg);
+    wss.emit("chatMessage", msg);
+});
+wss.on("connection", (socket) => {
+    console.log("new connection!");
+});
+wss.on("disconnect", (socket) => {
+    console.log("bye!");
+});
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,14 +40,7 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");
 
-io.on("connection", function (socket) {
-    console.log("Someone connected");
-    socket.on("chat message", function (msg) {
-        io.emit("chat message", msg);
-    });
-});
-
 // Start the API server
-app.listen(PORT, function () {
+server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
