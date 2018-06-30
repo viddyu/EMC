@@ -23,12 +23,12 @@ class Chat extends Component {
         });
         this.socket.on('connection', () => console.log("yay!"));*/
         this.socket = new WebSocketWrapper(
-            new WebSocket("ws://localhost:3000/socket")
+            new WebSocket("ws://" + window.location.host + "/socket")
         );
-        this.socket.on("chatMessage", (msg) => {
-            const {messages} = this.state;
+        this.socket.on("chatMessage", (from, message) => {
+            const { messages } = this.state;
             this.setState({
-                messages: [...messages, msg]
+                messages: [...messages, { from, message }]
             })
             window.scrollTo(0, document.body.scrollHeight);
         });
@@ -43,19 +43,23 @@ class Chat extends Component {
     };
 
     sendMessage = (event) => {
+        event.preventDefault();
         this.socket.emit("chatMessage", this.state.message);
-        this.setState({message: ""});
+        this.setState({ message: "" });
     };
 
     render() {
         return (
             <div>
                 <ul>
-                    {this.state.messages.map((msg) => <li>{msg}</li>)}
+                    {this.state.messages.map((msg) =>
+                        <li>{msg.from}: {msg.message}</li>)}
                 </ul>
-                <input onChange={this.updateInputChange} name="message"
-                    value={this.state.message} />
-                <button onClick={this.sendMessage}>Send</button>
+                <form onSubmit={this.sendMessage}>
+                    <input onChange={this.updateInputChange} name="message"
+                        value={this.state.message} />
+                    <button>Send</button>
+                </form>
             </div>
         )
     }
