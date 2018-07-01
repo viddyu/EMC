@@ -4,16 +4,19 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 import Form from "./components/Form/Form.js";
 import Chat from "./pages/chat/Chat.js";
+import Directions from "./pages/Directions/Directions.js";
 import "./App.css";
+
 
 const App = () => (
 
   <Router>
     <div>
       <Navbar />
-      <Route exact path="/" component={Form} />
-      <Route exact path="/records" component={Records} />
+      <Route exact path="/" component={Records} />
+      <Route exact path="/form" component={Form} />
       <Route exact path="/chat" component={Chat} />
+      <Route exact path="/directions" component={Directions} />
     </div>
   </Router>
 
