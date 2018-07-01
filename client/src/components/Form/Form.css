@@ -1,6 +1,11 @@
-.form  {
-	margin: 20px;
+header{
+	font-size: 20px;
 }
+
+.form{
+	background: white;
+}
+
 
 .form input {
 	display: block;
@@ -8,9 +13,13 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 	width: 25%;
-}   
+}
 
-text area {
-	width: 100%
+button{
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 5px;
 }
 

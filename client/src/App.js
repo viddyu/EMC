@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 import Form from "./components/Form/Form.js";
-import Chat from "./pages/Chat/Chat.js";
+import Chat from "./pages/chat/Chat.js";
 import "./App.css";
 
 const App = () => (

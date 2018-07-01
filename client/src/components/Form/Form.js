@@ -11,7 +11,7 @@ class Form extends Component {
         emcs: [],
         firstName: "",
         lastName: "",
-        age: "",
+        dateOfBirth: "",
         gender: "",
         bloodType: "",
         heartRate: "",
@@ -43,7 +43,7 @@ class Form extends Component {
             alert(`Submitted:
             First name: ${this.state.firstName}\n 
             Last name: ${this.state.lastName}\n
-            Age: ${this.state.age}\n
+            Date of Birth: ${this.state.dateOfBirth}\n
             Gender: ${this.state.gender}\n
             Blood Type: ${this.state.bloodType}\n
             Heart Rate: ${this.state.heartRate}\n
@@ -54,7 +54,7 @@ class Form extends Component {
             API.saveEMC({
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
-                age: this.state.age,
+                dateOfBirth: this.state.dateOfBirth,
                 gender: this.state.gender,
                 bloodType: this.state.bloodType,
                 heartRate: this.state.heartRate,
@@ -76,7 +76,7 @@ class Form extends Component {
         this.setState({
             firstName: "",
             lastName: "",
-            age: "",
+            dateOfBirth: "",
             gender: "",
             bloodType: "",
             heartRate: "",
@@ -101,21 +101,21 @@ class Form extends Component {
                     </header>
 
                     <p>
-                        Patient {this.state.firstName} {this.state.lastName}
-                        <br></br>
-                        Age {this.state.age}
-                        <br></br>
-                        Gender {this.state.gender}
-                        <br></br>
-                        Blood-Type {this.state.bloodType}
-                        <br></br>
-                        Heart Rate {this.state.heartRate}
-                        <br></br>
-                        Breath Rate {this.state.breathRate}
-                        <br></br>
-                        Blood Pressure {this.state.bloodPressure}
-                        <br></br>
-                        Notes {this.state.notes}
+                        Patient: {this.state.firstName} {this.state.lastName}
+                        <br/>
+                        Date of Birth: {this.state.dateOfBirth}
+                        <br/>
+                        Gender: {this.state.gender}
+                        <br/>
+                        Blood-Type: {this.state.bloodType}
+                        <br/>
+                        Heart Rate: {this.state.heartRate}
+                        <br/>
+                        Breath Rate: {this.state.breathRate}
+                        <br/>
+                        Blood Pressure: {this.state.bloodPressure}
+                        <br/>
+                        Notes: {this.state.notes}
                     </p>
                     <form className="form">
                         <input
@@ -134,17 +134,17 @@ class Form extends Component {
                         />
                         <input
                             value={this.state.age}
-                            name="age"
+                            name="dateOfBirth"
                             onChange={this.handleInputChange}
                             type="text"
-                            placeholder="Age"
+                            placeholder="MM/DD/YYYY"
                         />
                         <input
                             value={this.state.gender}
                             name="gender"
                             onChange={this.handleInputChange}
                             type="text"
-                            placeholder="Male, Female, or blank"
+                            placeholder="Gender"
                         />
                         <input
                             value={this.state.bloodType}
@@ -174,11 +174,12 @@ class Form extends Component {
                             type="text"
                             placeholder="Blood Pressure"
                         />
-                        <textarea
+                        <input
                             value={this.state.notes}
                             onChange={this.handleInputChange}
                             name="notes"
-                            placeholder="Notes (Optional)"
+                            type="text"
+                            placeholder="Additional Notes(Optional)"
                         />
                         <button
                             // disabled={!(this.state.firstName)}

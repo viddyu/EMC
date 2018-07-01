@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const emcSchema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    age: Number,
+    dateOfBirth: {type: String, required: true },
     gender: { type: String, enum: ['Male', 'Female'], required: false },
     bloodType: String,
     heartRate: { type: String, required: true },

@@ -11,7 +11,7 @@ class Records extends Component {
         emcs: [],
         firstName: "",
         lastName: "",
-        age: "",
+        dateOfBirth: "",
         gender: "",
         bloodType: "",
         heartRate: "",
@@ -27,7 +27,7 @@ class Records extends Component {
                     emcs: res.data,
                     firstName: "",
                     lastName: "",
-                    age: "",
+                    dateOfBirth: "",
                     gender: "",
                     bloodType: "",
                     heartRate: "",
@@ -69,7 +69,7 @@ class Records extends Component {
                                         <br></br>
                                         Last Name: {emc.lastName}
                                         <br></br>
-                                        Age: {emc.age}
+                                        Date Of Birth: {emc.dateOfBirth}
                                         <br></br>
                                         Gender: {emc.gender}
                                         <br></br>
