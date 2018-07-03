@@ -26,11 +26,11 @@ const App = () => (
     <div>
       <Navbar />
       <Route exact path="/form" component={Form} />
-      <Route exact path="/" component={Records} />
+      <Route exact path="/records" component={Records} />
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/directions" component={Directions} />
       <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
       <Route path="/loginstatus" render={(props) => <Status auth={auth} {...props} />} />
       <Route path="/logincallback" render={(props) => {
         handleAuthentication(props);

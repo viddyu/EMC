@@ -6,9 +6,9 @@ const Navbar = () => (
     <ul className="nav nav-tabs">
         <li className="nav-item">
             <Link
-                to="/login"
+                to="/"
                 className={
-                    window.location.pathname === "/login" ? "nav-link active" : "nav-link"
+                    window.location.pathname === "/" ? "nav-link active" : "nav-link"
                 }
             >
                 Log In
@@ -16,9 +16,9 @@ const Navbar = () => (
         </li>
         <li className="nav-item">
             <Link
-                to="/"
+                to="/records"
                 className={
-                    window.location.pathname === "/" ? "nav-link active" : "nav-link"
+                    window.location.pathname === "/records" ? "nav-link active" : "nav-link"
                 }
             >
                 Records
