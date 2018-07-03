@@ -14,7 +14,7 @@ import "./App.css";
 
 const auth = new Auth();
 
-const handleAuthentication = ({location}) => {
+const handleAuthentication = ({ location }) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
@@ -25,17 +25,17 @@ const App = () => (
   <Router history={history}>
     <div>
       <Navbar />
-      <Route exact path="/" component={Form} />
-      <Route exact path="/records" component={Records} />
+      <Route exact path="/form" component={Form} />
+      <Route exact path="/" component={Records} />
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/directions" component={Directions} />
       <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
       <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
       <Route path="/loginstatus" render={(props) => <Status auth={auth} {...props} />} />
       <Route path="/logincallback" render={(props) => {
-            handleAuthentication(props);
-            return <Callback {...props} /> 
-          }}/>
+        handleAuthentication(props);
+        return <Callback {...props} />
+      }} />
     </div>
   </Router>
 
