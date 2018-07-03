@@ -4,7 +4,16 @@ import { Link } from "react-router-dom";
 const Navbar = () => (
 
     <ul className="nav nav-tabs">
-
+       <li className="nav-item">
+            <Link
+                to="/login"
+                className={
+                    window.location.pathname === "/login" ? "nav-link active" : "nav-link"
+                }
+            >
+                Log In
+       </Link>
+       </li>
         <li className="nav-item">
             <Link
                 to="/"
@@ -13,7 +22,7 @@ const Navbar = () => (
                 }
             >
                 Records
-      </Link>
+       </Link>
         </li>
 
         <li className="nav-item">
