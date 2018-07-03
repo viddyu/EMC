@@ -30,7 +30,7 @@ const App = () => (
       <Route exact path="/chat" component={Chat} />
       <Route exact path="/directions" component={Directions} />
       <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
       <Route path="/loginstatus" render={(props) => <Status auth={auth} {...props} />} />
       <Route path="/logincallback" render={(props) => {
         handleAuthentication(props);
