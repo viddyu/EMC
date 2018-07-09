@@ -58,7 +58,7 @@ class Chat extends Component {
                 <form onSubmit={this.sendMessage}>
                     <input onChange={this.updateInputChange} name="message"
                         value={this.state.message} />
-                    <button>Send</button>
+                    <button className="btn btn-primary">Send</button>
                 </form>
             </div>
         )
