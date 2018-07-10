@@ -1,6 +1,9 @@
 {
   "name": "mern",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.3"
+  },
   "private": true,
   "dependencies": {
     "auth0-js": "^9.6.1",

@@ -1,25 +1,38 @@
-header{
-	font-size: 20px;
+.topList {
+    padding-top: 15px;
+    font-size: 15px;
+    margin-bottom: 15px;
 }
 
-.form{
-	background: white;
+.App-title {
+    font-family: 'Kumar One', cursive;
+    font-size: 32px;
+    text-align: center;
+}
+
+.patient-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.form input {
-	display: block;
-	margin: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	width: 25%;
+.form-group {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 50%;
 }
 
-button{
-	display: block;
-	margin: auto;
-	margin-top: 10px;
-	margin-bottom: 15px;
-	padding: 5px;
+.btn-primary {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    width: auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .App-title{
+        font-size: 25px;
+    }
+}
