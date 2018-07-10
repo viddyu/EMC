@@ -2,6 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const http = require("http");
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
+const cors = require('cors');
+require('dotenv').config();
 
 // Wrapper for raw WebSocketServer to make programming more fun!
 const WebSocketServerWrapper = require("ws-server-wrapper");
@@ -13,6 +18,7 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
 const server = http.createServer(app);
 // Create WebSocketServer
 const wss = new WebSocketServerWrapper(
@@ -55,8 +61,36 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+// Handle authentication support
+if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
+    throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
+  }
+  
+  const corsOptions =  {
+    origin: 'http://localhost:3000'
+  };
+  
+  app.use(cors(corsOptions));
+  
+  const checkJwt = jwt({
+    // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
+    secret: jwksRsa.expressJwtSecret({
+      cache: true,
+      rateLimit: true,
+      jwksRequestsPerMinute: 5,
+      jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`
+    }),
+  
+    // Validate the audience and the issuer.
+    audience: process.env.AUTH0_AUDIENCE,
+    issuer: `https://${process.env.AUTH0_DOMAIN}/`,
+    algorithms: ['RS256']
+  });
+
+const checkScopes = jwtAuthz(['read:messages']);
+
 // Add routes, both API and view
-app.use(routes);
+app.use(checkJwt, routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");

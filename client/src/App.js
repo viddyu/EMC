@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 import Form from "./components/Form/Form.js";
@@ -11,7 +11,7 @@ import Callback from './components/Login/Callback/Callback.js';
 import Auth from './Auth/Auth.js';
 import history from './history';
 import "./App.css";
-
+   
 const auth = new Auth();
 
 const handleAuthentication = ({ location }) => {
@@ -20,19 +20,27 @@ const handleAuthentication = ({ location }) => {
   }
 }
 
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    (auth.isAuthenticated() === true)
+    ? <Component {...props} />
+    : <Redirect to='/login' />
+  )} />
+)
+
 const App = () => (
 
   <Router history={history}>
     <div>
       <Navbar />
-      <Route exact path="/form" component={Form} />
-      <Route exact path="/records" component={Records} />
-      <Route exact path="/chat" component={Chat} />
-      <Route exact path="/directions" component={Directions} />
+      <PrivateRoute exact path="/form" component={Form} />
+      <PrivateRoute exact path="/records" component={Records} />
+      <PrivateRoute exact path="/chat" component={Chat} />
+      <PrivateRoute exact path="/directions" component={Directions} />
       <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
       <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/loginstatus" render={(props) => <Status auth={auth} {...props} />} />
-      <Route path="/logincallback" render={(props) => {
+      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
+      <Route path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
       }} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+class Status extends Component {
   login() {
     this.props.auth.login();
   }
@@ -34,4 +34,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Status;

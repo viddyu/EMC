@@ -1,4 +1,4 @@
-import history from '../history';
+//import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 
@@ -27,9 +27,11 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        // history.replace('/records');
+        window.location.href = "/records";
       } else if (err) {
-        history.replace('/home');
+        // history.replace('/login');
+        window.location.href = "/login";
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -43,7 +45,8 @@ export default class Auth {
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the home route
-    history.replace('/');
+    // history.replace('/records');
+    window.location.href = "/records";
   }
 
   logout() {
@@ -52,7 +55,8 @@ export default class Auth {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // navigate to the home route
-    history.replace('/');
+    // history.replace('/login');
+    window.location.href = "/login";
   }
 
   isAuthenticated() {
@@ -61,4 +65,5 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
 }
