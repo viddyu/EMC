@@ -120,7 +120,7 @@ class Form extends Component {
                         </li>
                         </ul>
                 </div>
-                    <form className="text-info">
+                    <form className="patient-form">
                         <div className="form-group">
                         <input
                             value={this.state.firstName}

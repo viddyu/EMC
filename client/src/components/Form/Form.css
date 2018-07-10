@@ -1,6 +1,7 @@
 .topList {
     padding-top: 15px;
     font-size: 15px;
+    margin-bottom: 15px;
 }
 
 .App-title {
@@ -9,11 +10,11 @@
     text-align: center;
 }
 
-form {
+.patient-form {
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
     align-items: center;
-    background: white !important;
 }
 
 
@@ -28,4 +29,10 @@ form {
     margin-bottom: 15px;
     padding: 5px 15px;
     width: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .App-title{
+        font-size: 25px;
+    }
 }
