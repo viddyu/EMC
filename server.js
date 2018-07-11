@@ -30,6 +30,59 @@ wss.on("chatMessage", function (msg) {
     // `this` refers to the WebSocket who sent the message
     wss.emit("chatMessage", this.get("name"), msg);
 });
+
+// key = hospitalID
+// value = set of sockets connected from that hospital
+let hospitalSockets = {};
+
+wss.on("login", function (userId, token) {
+    // `this` refers to the connected socket
+
+    // Authenticate user
+    // TODO: Make sure that this user isn't lying about their userId
+    // In other words, validate the token
+
+    // TODO: Query MongoDB to make sure the user exists in the system
+    // Also get the user type from MongoDB
+
+
+    // If they are authenticated...
+    this.set("userId", userId);
+    // If this user is a hospital user...
+    // TODO: Get the user's hospital ID
+    const hospitalId = 123;
+    const socketSet = hospitalSockets[hospitalId];
+    if (socketSet == null) {
+        // See MDN docs for `Set` (kind of like an array)
+        socketSet = new Set();
+        hospitalSockets[hospitalId] = socketSet;
+    }
+    // Add to the socketSet
+    socketSet.add(socket);
+});
+
+wss.on("formSubmit", function (form) {
+    console.log("Incoming message", form);
+
+    // Check to see which hospital this form goes to
+    // Get hospitalId from `form`
+    const { hospitalId } = form;
+
+    // Notify all sockets from that hospital about this form submission
+    if (hospitalSockets[hospitalId]) {
+        hospitalSockets[hospitalId].forEach(socket => {
+            socket.emit("formSubmit", form);
+        })
+    }
+
+    // Save the form in the database
+});
+
+wss.on("getForm", function (formId) => {
+    // Return a Promise that resolves to the form requested
+    // client retrieves any form once its been saved
+})
+
 // Example of request/response (delete b/c this is insecure!)
 wss.on("readFile", function (filename) {
     // You can return data or a Promise that resolves to data!
@@ -64,28 +117,28 @@ if (process.env.NODE_ENV === "production") {
 // Handle authentication support
 if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
     throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
-  }
-  
-  const corsOptions =  {
+}
+
+const corsOptions = {
     origin: 'http://localhost:3000'
-  };
-  
-  app.use(cors(corsOptions));
-  
-  const checkJwt = jwt({
+};
+
+app.use(cors(corsOptions));
+
+const checkJwt = jwt({
     // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
     secret: jwksRsa.expressJwtSecret({
-      cache: true,
-      rateLimit: true,
-      jwksRequestsPerMinute: 5,
-      jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`
     }),
-  
+
     // Validate the audience and the issuer.
     audience: process.env.AUTH0_AUDIENCE,
     issuer: `https://${process.env.AUTH0_DOMAIN}/`,
     algorithms: ['RS256']
-  });
+});
 
 const checkScopes = jwtAuthz(['read:messages']);
 
