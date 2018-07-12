@@ -24,7 +24,7 @@
     "ws": "^5.2.1",
     "ws-server-wrapper": "^1.4.1"
   },
-  "description": "",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
@@ -39,5 +39,13 @@
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viddyu/EMC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viddyu/EMC/issues"
+  },
+  "homepage": "https://github.com/viddyu/EMC#readme"
 }

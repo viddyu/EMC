@@ -22,6 +22,8 @@ class Chat extends Component {
             window.scrollTo(0, document.body.scrollHeight);
         });
         this.socket.on('connection', () => console.log("yay!"));*/
+
+        // create connection to server
         this.socket = new WebSocketWrapper(
             new WebSocket("ws://" + window.location.host + "/socket")
         );
@@ -33,6 +35,10 @@ class Chat extends Component {
             window.scrollTo(0, document.body.scrollHeight);
         });
         this.socket.on("open", () => console.log('Socket connected!'));
+
+        //this.socket.request("getform", formId)
+        //    .then(...)
+        //
     }
 
     updateInputChange = (event) => {
@@ -57,10 +63,10 @@ class Chat extends Component {
                 </ul>
                 <form className="chat-form" onSubmit={this.sendMessage}>
                     <div className="form-group">
-                    <input className="form-control" onChange={this.updateInputChange} name="message"
-                        value={this.state.message} />
-                        </div>
-                <button className="btn btn-primary">Send</button>
+                        <input className="form-control" onChange={this.updateInputChange} name="message"
+                            value={this.state.message} />
+                    </div>
+                    <button className="btn btn-primary">Send</button>
                 </form>
             </div>
         )
