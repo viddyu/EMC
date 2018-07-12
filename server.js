@@ -78,9 +78,17 @@ wss.on("formSubmit", function (form) {
     // Save the form in the database
 });
 
-wss.on("getForm", function (formId) => {
+wss.on("getForm", function (formId) {
+    // `this` refers to the connected socket who issued the getform request
+    // Check to see if the user is logged in...
+    if (this.get("userId") == null)
+        return;
+
     // Return a Promise that resolves to the form requested
     // client retrieves any form once its been saved
+    return db.EMC
+        .find({ _id: ....object id .....formId })
+        .sort({ date: -1 })
 })
 
 // Example of request/response (delete b/c this is insecure!)
