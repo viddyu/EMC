@@ -1,3 +1,4 @@
 module.exports = {
-    EMC: require("./emc")
+    EMC: require("./emc"),
+    USER: require("./user")
 };  
