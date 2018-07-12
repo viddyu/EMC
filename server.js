@@ -94,7 +94,7 @@ wss.on("getForm", function (formId) {
     // Return a Promise that resolves to the form requested
     // client retrieves any form once its been saved
     return db.EMC
-        .find({ _id: ....object id .....formId })
+        .find({ _id: object, id : formId })
         .sort({ date: -1 })
 })
 
@@ -131,9 +131,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Handle authentication support
-if (!process.env.AUTH0_DOMAIN || !process.env.AUTH0_AUDIENCE) {
-    throw 'Make sure you have AUTH0_DOMAIN, and AUTH0_AUDIENCE in your .env file';
-}
+
 
 const corsOptions = {
     origin: 'http://localhost:3000'
@@ -164,6 +162,7 @@ app.use(checkJwt, routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCusers");
 // Start the API server
 server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
