@@ -30,6 +30,10 @@ class Login extends Component {
         auth.logout();
     }
     
+    profile() {
+        auth.getProfile();
+    }
+
     render() {
   //      const { isAuthenticated } = this.props.auth;
 
@@ -68,7 +72,26 @@ class Login extends Component {
                             )
                         }
                     </div>
-                </div>
+                    <div id="profile-view" class="panel panel-default profile-area">
+                        <div className="panel-heading"><h3>Profile</h3></div>
+                            <div className="panel-body">
+                                <img className="avatar" alt="avatar"></img>
+                                <div>
+                                    <label><i className="glyphicon glyphicon-user"></i> Nickname</label>
+                                    <h3 className="nickname">_</h3>
+                                </div>
+                                <pre className="full-profile"></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                         type="button"
+                         id="btn-profile-view"
+                         className="btn btn-primary btn-margin"
+                         onClick={this.profile.bind(this)}
+                    >
+                            Profile
+                    </button>
             </div>
         );
     }

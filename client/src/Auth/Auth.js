@@ -2,6 +2,8 @@
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 
+var userProfile;
+
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -9,7 +11,7 @@ export default class Auth {
     redirectUri: AUTH_CONFIG.callbackUrl,
     audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor() {
@@ -46,6 +48,7 @@ export default class Auth {
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the home route
     // history.replace('/records');
+    this.getProfile();
     window.location.href = "/records";
   }
 
@@ -66,4 +69,32 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 
+  getProfile() {
+    if (!userProfile) {
+      var accessToken = localStorage.getItem('access_token');
+
+      if (!accessToken) {
+        console.log('Access token must exist to fetch profile');
+      }
+
+      this.auth0.client.userInfo(accessToken, function(err, profile) {
+        if (profile) {
+          userProfile = profile;
+          displayProfile();
+        }
+      });
+    } else {
+      displayProfile();
+    }
+  }
+}
+
+function displayProfile() {
+  // display the profile
+  document.querySelector('#profile-view .nickname').innerHTML =
+    userProfile.nickname;
+  document.querySelector(
+    '#profile-view .full-profile'
+  ).innerHTML = JSON.stringify(userProfile, null, 2);
+  document.querySelector('#profile-view img').src = userProfile.picture;
 }
