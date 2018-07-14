@@ -3,6 +3,7 @@ import Auth from "../../Auth/Auth.js";
 //import API from "../../utils/API";
 //import { Link } from "react-router-dom";
 import "./Login.css";
+import avatar from "./default-avatar.png";
 // import App from "../../App";
 
 const auth = new Auth();
@@ -75,7 +76,7 @@ class Login extends Component {
                     <div id="profile-view" class="panel panel-default profile-area">
                         <div className="panel-heading"><h3>Profile</h3></div>
                             <div className="panel-body">
-                                <img className="avatar" alt="avatar"></img>
+                                <img className="avatar" alt="avatar" src={avatar}></img>
                                 <div>
                                     <label><i className="glyphicon glyphicon-user"></i> Nickname</label>
                                     <h3 className="nickname">_</h3>
