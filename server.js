@@ -20,9 +20,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 const server = http.createServer(app);
-// Create WebSocketServer
+
+// Create WebSocket.Server
 const wss = new WebSocketServerWrapper(
     new WebSocketServer({ server, path: "/socket" }));
+
+var serverWrapper = new WebSocketServerWrapper(wss);
+
+// Connected clients receive "Hello!"
+serverWrapper.emit("msg", "Hello!");
 
 // Handle chat message
 wss.on("chatMessage", function (msg) {
@@ -41,6 +47,7 @@ wss.on("login", function (userId, token) {
     // Authenticate user
     // TODO: Make sure that this user isn't lying about their userId
     // In other words, validate the token
+    // email is the key
 
     // TODO: Query MongoDB to make sure the user exists in the system
     // Also get the user type from MongoDB
@@ -102,6 +109,7 @@ wss.on("readFile", function (filename) {
         });
     });
 });
+
 wss.on("connection", (socket) => {
     console.log("new connection!");
     // Set name to what username is supposed to be

@@ -92,36 +92,36 @@ class Form extends Component {
 
             <div>
                 <div className="topList">
-                        <h1 className="App-title">Emergency Medical Communication</h1>
-                        <ul className="list-group">
+                    <h1 className="App-title">Emergency Medical Communication</h1>
+                    <ul className="list-group">
                         <li className="list-group-item">
-                        Patient: {this.state.firstName} {this.state.lastName}
+                            Patient: {this.state.firstName} {this.state.lastName}
                         </li>
                         <li className="list-group-item">
-                        Date of Birth: {this.state.dateOfBirth}
+                            Date of Birth: {this.state.dateOfBirth}
                         </li>
                         <li className="list-group-item">
-                        Gender: {this.state.gender}
+                            Gender: {this.state.gender}
                         </li>
                         <li className="list-group-item">
-                        Blood-Type: {this.state.bloodType}
+                            Blood-Type: {this.state.bloodType}
                         </li>
                         <li className="list-group-item">
-                        Heart Rate: {this.state.heartRate}
+                            Heart Rate: {this.state.heartRate}
                         </li>
                         <li className="list-group-item">
-                        Breath Rate: {this.state.breathRate}
+                            Breath Rate: {this.state.breathRate}
                         </li>
                         <li className="list-group-item">
-                        Blood Pressure: {this.state.bloodPressure}
+                            Blood Pressure: {this.state.bloodPressure}
                         </li>
                         <li className="list-group-item">
-                        Notes: {this.state.notes}
+                            Notes: {this.state.notes}
                         </li>
-                        </ul>
+                    </ul>
                 </div>
-                    <form className="patient-form">
-                        <div className="form-group">
+                <form className="patient-form">
+                    <div className="form-group">
                         <input
                             value={this.state.firstName}
                             name="firstName"
@@ -130,8 +130,8 @@ class Form extends Component {
                             placeholder="First Name"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.lastName}
                             name="lastName"
@@ -140,8 +140,8 @@ class Form extends Component {
                             placeholder="Last Name"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.age}
                             name="dateOfBirth"
@@ -150,8 +150,8 @@ class Form extends Component {
                             placeholder="MM/DD/YYYY"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.gender}
                             name="gender"
@@ -160,8 +160,8 @@ class Form extends Component {
                             placeholder="Gender"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.bloodType}
                             name="bloodType"
@@ -170,8 +170,8 @@ class Form extends Component {
                             placeholder="Blood Type"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.heartRate}
                             name="heartRate"
@@ -180,8 +180,8 @@ class Form extends Component {
                             placeholder="Heart Rate"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.breathRate}
                             name="breathRate"
@@ -190,8 +190,8 @@ class Form extends Component {
                             placeholder="Breath Rate"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.bloodPressure}
                             name="bloodPressure"
@@ -200,8 +200,8 @@ class Form extends Component {
                             placeholder="Blood Pressure"
                             className="form-control"
                         />
-                        </div>
-                        <div className="form-group">
+                    </div>
+                    <div className="form-group">
                         <input
                             value={this.state.notes}
                             onChange={this.handleInputChange}
@@ -210,22 +210,22 @@ class Form extends Component {
                             placeholder="Additional Notes(Optional)"
                             className="form-control"
                         />
-                        </div>
-                        <button
-                            // disabled={!(this.state.firstName)}
-                            onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
-                    </form>
-                    <List>
-                        {this.state.emcs.map(emc => (
-                            <ListItem key={emc._id}>
-                                <Link to={"/emcs/" + emc._id}>
-                                    <strong>
-                                        {emc.title} by {emc.author}
-                                    </strong>
-                                </Link>
-                                {/* <DeleteBtn onClick={() => this.deleteEMC(emc._id)} /> */}
-                            </ListItem>
-                        ))}
+                    </div>
+                    <button
+                        // disabled={!(this.state.firstName)}
+                        onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
+                </form>
+                <List>
+                    {this.state.emcs.map(emc => (
+                        <ListItem key={emc._id}>
+                            <Link to={"/emcs/" + emc._id}>
+                                <strong>
+                                    {emc.title} by {emc.author}
+                                </strong>
+                            </Link>
+                            {/* <DeleteBtn onClick={() => this.deleteEMC(emc._id)} /> */}
+                        </ListItem>
+                    ))}
                 </List>
             </div>
         );
