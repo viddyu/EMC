@@ -94,7 +94,7 @@ wss.on("getForm", function (formId) {
     // Return a Promise that resolves to the form requested
     // client retrieves any form once its been saved
     return db.EMC
-        .find({ _id: object, id : formId })
+        .find({ _id: object, id: formId })
         .sort({ date: -1 })
 })
 
@@ -132,7 +132,6 @@ if (process.env.NODE_ENV === "production") {
 
 // Handle authentication support
 
-
 const corsOptions = {
     origin: 'http://localhost:3000'
 };
@@ -148,9 +147,17 @@ const checkJwt = jwt({
         jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`
     }),
 
+    getToken(req) {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+            return req.headers.authorization.split(' ')[1]
+        }
+
+        return null
+    },
+
     // Validate the audience and the issuer.
-    audience: process.env.AUTH0_AUDIENCE,
-    issuer: `https://${process.env.AUTH0_DOMAIN}/`,
+    // audience: process.env.AUTH0_AUDIENCE,
+    issuer: `https://emcfr.auth0.com/`,
     algorithms: ['RS256']
 });
 
@@ -162,7 +169,7 @@ app.use(checkJwt, routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCdb");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCusers");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/EMCusers");
 // Start the API server
 server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

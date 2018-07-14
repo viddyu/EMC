@@ -19,7 +19,8 @@ export default {
 
     // Saves a EMC to the database
     saveEMC: function (EMCData) {
-        return axios.post("/api/emcs", EMCData);
+        return axios.post("/api/emcs", EMCData, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('id_token')}` }
+        });
     }
-
 }
