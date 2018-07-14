@@ -200,6 +200,5 @@ render() {
         </div>
     )
 }
-}
 
 export default Directions;
