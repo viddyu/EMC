@@ -73,7 +73,7 @@ class Login extends Component {
                             )
                         }
                     </div>
-                    <div id="profile-view" class="panel panel-default profile-area">
+                    <div id="profile-view" className="panel panel-default profile-area">
                         <div className="panel-heading"><h3>Profile</h3></div>
                             <div className="panel-body">
                                 <img className="avatar" alt="avatar" src={avatar}></img>
