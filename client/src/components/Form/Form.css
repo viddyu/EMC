@@ -1,7 +1,8 @@
 .topList {
+    width: 50%;
     padding-top: 15px;
     font-size: 15px;
-    margin-bottom: 15px;
+    float: left;
 }
 
 .App-title {
@@ -11,10 +12,8 @@
 }
 
 .patient-form {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    float: right;
 }
 
 

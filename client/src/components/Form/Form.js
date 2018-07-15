@@ -91,8 +91,7 @@ class Form extends Component {
         return (
 
             <div>
-                <div className="topList">
-                    <h1 className="App-title">Emergency Medical Communication</h1>
+                <section className="topList">
                     <ul className="list-group">
                         <li className="list-group-item">
                             Patient: {this.state.firstName} {this.state.lastName}
@@ -119,8 +118,9 @@ class Form extends Component {
                             Notes: {this.state.notes}
                         </li>
                     </ul>
-                </div>
-                <form className="patient-form">
+                </section>
+                <section className="patient-form">
+                <form>
                     <div className="form-group">
                         <input
                             value={this.state.firstName}
@@ -215,6 +215,7 @@ class Form extends Component {
                         // disabled={!(this.state.firstName)}
                         onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
                 </form>
+                </section>
                 <List>
                     {this.state.emcs.map(emc => (
                         <ListItem key={emc._id}>

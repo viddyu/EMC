@@ -54,7 +54,7 @@ class Records extends Component {
         console.log(this.state.emcs);
 
         return (
-            <Col size="md-6 sm-12">
+            <div className="records">
 
                 EMC Records
 
@@ -91,7 +91,7 @@ class Records extends Component {
                 ) : (
                         <h3>No Results to Display</h3>
                     )}
-            </Col>
+            </div>
         )
     }
 
