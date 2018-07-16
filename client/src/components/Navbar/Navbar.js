@@ -33,7 +33,7 @@ const Navbar = () => (
                 }
             >
                 Form
-      </Link>
+       </Link>
         </li>
 
         <li className="nav-item">
@@ -44,7 +44,7 @@ const Navbar = () => (
                 }
             >
                 Chat
-      </Link>
+       </Link>
         </li>
 
         <li className="nav-item">
@@ -55,9 +55,18 @@ const Navbar = () => (
                 }
             >
                 Directions
-      </Link>
+        </Link>
         </li>
-
+        <li className="nav-item">
+            <Link
+                to="/user"
+                className={
+                    window.location.pathname === "/user" ? "nav-link active" : "nav-link"
+                }
+            >
+                Users
+       </Link>
+        </li>
     </ul>
 
 );

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Auth from "../../Auth/Auth.js";
+import API from "../../utils/API";
+
 //import API from "../../utils/API";
 //import { Link } from "react-router-dom";
 import "./Login.css";
@@ -33,6 +35,10 @@ class Login extends Component {
     
     profile() {
         auth.getProfile();
+    }
+
+    register() {
+        API.saveUSER();
     }
 
     render() {
@@ -73,7 +79,7 @@ class Login extends Component {
                             )
                         }
                     </div>
-                    <div id="profile-view" class="panel panel-default profile-area">
+                    <div id="profile-view" className="panel panel-default profile-area">
                         <div className="panel-heading"><h3>Profile</h3></div>
                             <div className="panel-body">
                                 <img className="avatar" alt="avatar" src={avatar}></img>
@@ -93,6 +99,15 @@ class Login extends Component {
                     >
                             Profile
                     </button>
+                    <button
+                         type="button"
+                         id="btn-profile-view"
+                         className="btn btn-secondary btn-margin"
+                         onClick={this.register.bind(this)}
+                    >
+                            Register
+                    </button>
+ 
             </div>
         );
     }
