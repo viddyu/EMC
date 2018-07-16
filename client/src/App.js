@@ -44,17 +44,7 @@ const App = () => (
       </div>
     </section>
 
-    <section id="records" className="bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Records/>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="chat">
+    <section id="chat" className="bg-light">
       <div className="container">
         <div className="row">
           <div className="col-lg-8 mx-auto">

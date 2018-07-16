@@ -55,9 +55,7 @@ class Records extends Component {
 
         return (
             <div className="records">
-
-                EMC Records
-
+                <form>
                 {this.state.emcs.length ? (
                     <List>
                         {this.state.emcs.map(emc => (
@@ -91,6 +89,7 @@ class Records extends Component {
                 ) : (
                         <h3>No Results to Display</h3>
                     )}
+                </form>
             </div>
         )
     }

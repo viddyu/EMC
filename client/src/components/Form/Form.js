@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Link } from "react-router-dom";
 import "./Form.css";
+import Records from "../../pages/Records/Records.js";
 // import App from "../../App";
 
 class Form extends Component {
@@ -188,33 +189,8 @@ class Form extends Component {
                         onClick={this.handleFormSubmit} className="btn btn-primary patient-button">Submit</button>
                 </form>
                 </section>
-                <section className="patient-form">
-                    <ul className="list-group">
-                        <li className="list-group-item">
-                            Patient: {this.state.firstName} {this.state.lastName}
-                        </li>
-                        <li className="list-group-item">
-                            Date of Birth: {this.state.dateOfBirth}
-                        </li>
-                        <li className="list-group-item">
-                            Gender: {this.state.gender}
-                        </li>
-                        <li className="list-group-item">
-                            Blood-Type: {this.state.bloodType}
-                        </li>
-                        <li className="list-group-item">
-                            Heart Rate: {this.state.heartRate}
-                        </li>
-                        <li className="list-group-item">
-                            Breath Rate: {this.state.breathRate}
-                        </li>
-                        <li className="list-group-item">
-                            Blood Pressure: {this.state.bloodPressure}
-                        </li>
-                        <li className="list-group-item">
-                            Notes: {this.state.notes}
-                        </li>
-                    </ul>
+                <section>
+                    <Records/>
                 </section>
                 <List>
                     {this.state.emcs.map(emc => (
