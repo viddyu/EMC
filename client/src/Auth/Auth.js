@@ -81,6 +81,7 @@ export default class Auth {
         if (profile) {
           userProfile = profile;
           displayProfile();
+          saveProfile();
         }
       });
     } else {
@@ -98,3 +99,12 @@ function displayProfile() {
   ).innerHTML = JSON.stringify(userProfile, null, 2);
   document.querySelector('#profile-view img').src = userProfile.picture;
 }
+
+function saveProfile() {
+  // save the profile
+   localStorage.setItem('name', userProfile.nickname);
+   localStorage.setItem('email', userProfile.name);
+   localStorage.setItem('photo', userProfile.picture);
+}
+
+
