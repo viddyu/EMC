@@ -11,7 +11,6 @@ class User extends Component {
         users: [],
         Name: "",
         Email: "",
-        Photo: "",
         Role: "",
     };
 
@@ -22,7 +21,6 @@ class User extends Component {
                     user: res.data,
                     Name: "",
                     Email: "",
-                    Photo: "",
                     Role: ""
                 })
             )
@@ -49,19 +47,16 @@ class User extends Component {
 
         if (this.state.Name &&
             this.state.Email &&
-            this.state.Photo &&
             this.state.Role) {
 
             alert(`Submitted:
-            Name:  ${this.state.Name}\n 
-            Photo: ${this.state.Photo}\n
+            Name:  ${this.state.Name}\n
             Email: ${this.state.Email}\n
             Role:  ${this.state.Role}`);
 
             API.saveUser({
                 Name:  this.state.Name,
                 Email: this.state.Email,
-                Photo: this.state.Photo,
                 Role:  this.state.Role
             })
             // .then(res => this.loadEMCs())
@@ -69,9 +64,6 @@ class User extends Component {
             .catch(err => console.log(err));
         }
 
-        else {
-            alert('You left one or more User entries blank. \nPlease provide all of the User information.')
-        }
 
         // Alert the user their first and last name, clear 'this.state.firstName' and 'this.state.lastName', 
         // clearing the inputs
@@ -79,7 +71,6 @@ class User extends Component {
         this.setState({
             Name: "",
             Email: "",
-            Photo: "",
             Role: ""
           });
     };
@@ -114,13 +105,7 @@ class User extends Component {
                             type="text"
                             placeholder="Name"
                         />
-                        <input
-                            value={this.state.Photo}
-                            name="Email"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Photo"
-                        />
+                        
                         <input
                             value={this.state.email}
                             name="email"
