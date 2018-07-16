@@ -33,19 +33,46 @@ const App = () => (
   <Router history={history}>
     <div>
       <Navbar/>
-      <br/>
-      <section className="sec1">
-      <Form/>
-      </section>
-      <section className="sec2">
-      <Records/>
-      </section>
-      <section className="sec3">
-      <Chat/>
-      </section>
-      <section className="sec4">
-      <Directions/>
-      </section>
+      
+      <section id="form">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Form/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="records" className="bg-light">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Records/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chat">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Chat/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section id="directions">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Directions/>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   </Router>
 

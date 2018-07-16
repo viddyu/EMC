@@ -185,7 +185,7 @@ class Form extends Component {
                     </div>
                     <button
                         // disabled={!(this.state.firstName)}
-                        onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
+                        onClick={this.handleFormSubmit} className="btn btn-primary patient-button">Submit</button>
                 </form>
                 </section>
                 <section className="patient-form">
