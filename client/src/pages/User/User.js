@@ -55,13 +55,18 @@ class User extends Component {
             Role:  ${this.state.Role}`);
 
             API.saveUser({
-                Name:  this.state.Name,
+                Name: this.state.Name,
                 Email: this.state.Email,
+<<<<<<< HEAD
                 Role:  this.state.Role
+=======
+                Photo: this.state.Photo,
+                Role: this.state.Role
+>>>>>>> dc1c087070ef72425026b8c875eaee7e17512513
             })
-            // .then(res => this.loadEMCs())
-            .then(res => this.loadUsers())
-            .catch(err => console.log(err));
+                // .then(res => this.loadEMCs())
+                .then(res => this.loadUsers())
+                .catch(err => console.log(err));
         }
 
 
@@ -72,7 +77,7 @@ class User extends Component {
             Name: "",
             Email: "",
             Role: ""
-          });
+        });
     };
 
     render() {
@@ -105,22 +110,32 @@ class User extends Component {
                             type="text"
                             placeholder="Name"
                         />
+<<<<<<< HEAD
                         
+=======
+                        <input
+                            value={this.state.Photo}
+                            name="Photo"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Photo"
+                        />
+>>>>>>> dc1c087070ef72425026b8c875eaee7e17512513
                         <input
                             value={this.state.email}
-                            name="email"
+                            name="Email"
                             onChange={this.handleInputChange}
                             type="text"
                             placeholder="E-Mail"
                         />
                         <input
                             value={this.state.role}
-                            name="role"
+                            name="Role"
                             onChange={this.handleInputChange}
                             type="text"
                             placeholder="Role"
                         />
-                         <button
+                        <button
                             // disabled={!(this.state.firstName)}
                             onClick={this.handleUserSubmit}>Submit
                          </button>
