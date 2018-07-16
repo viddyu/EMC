@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Directions.css";
 
-<<<<<<< HEAD
 // var map;
 // var marker;
 // var infowindow;
@@ -213,18 +212,6 @@ class Directions extends Component {
     // });
 
     // "https://maps.googleapis.com/maps/api/distancematrix/json?parameters"
-=======
-class Directions extends Component {
-
-    //'user strick';
-    handleInit = () => {
-        // call functions
-//        initMap();
-//        ZoomControl();
-//        GeolocationControl();
-    };
-    //"https://maps.googleapis.com/maps/api/distancematrix/json?parameters";
->>>>>>> a48c653d9029f8e6b2d69e03c5e6c44009ab9b89
 
     // Google Directions API
     // https://developers.google.com/maps/documentation/directions/intro?hl=en
