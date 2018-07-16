@@ -59,14 +59,14 @@ class User extends Component {
             Role:  ${this.state.Role}`);
 
             API.saveUser({
-                Name:  this.state.Name,
+                Name: this.state.Name,
                 Email: this.state.Email,
                 Photo: this.state.Photo,
-                Role:  this.state.Role
+                Role: this.state.Role
             })
-            // .then(res => this.loadEMCs())
-            .then(res => this.loadUsers())
-            .catch(err => console.log(err));
+                // .then(res => this.loadEMCs())
+                .then(res => this.loadUsers())
+                .catch(err => console.log(err));
         }
 
         else {
@@ -81,7 +81,7 @@ class User extends Component {
             Email: "",
             Photo: "",
             Role: ""
-          });
+        });
     };
 
     render() {
@@ -116,26 +116,26 @@ class User extends Component {
                         />
                         <input
                             value={this.state.Photo}
-                            name="Email"
+                            name="Photo"
                             onChange={this.handleInputChange}
                             type="text"
                             placeholder="Photo"
                         />
                         <input
                             value={this.state.email}
-                            name="email"
+                            name="Email"
                             onChange={this.handleInputChange}
                             type="text"
                             placeholder="E-Mail"
                         />
                         <input
                             value={this.state.role}
-                            name="role"
+                            name="Role"
                             onChange={this.handleInputChange}
                             type="text"
                             placeholder="Role"
                         />
-                         <button
+                        <button
                             // disabled={!(this.state.firstName)}
                             onClick={this.handleUserSubmit}>Submit
                          </button>
