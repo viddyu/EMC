@@ -90,36 +90,8 @@ class Form extends Component {
         // Notice how each input has a 'value', 'name', and 'onChange' prop
         return (
 
-            <div>
-                <section className="topList">
-                    <ul className="list-group">
-                        <li className="list-group-item">
-                            Patient: {this.state.firstName} {this.state.lastName}
-                        </li>
-                        <li className="list-group-item">
-                            Date of Birth: {this.state.dateOfBirth}
-                        </li>
-                        <li className="list-group-item">
-                            Gender: {this.state.gender}
-                        </li>
-                        <li className="list-group-item">
-                            Blood-Type: {this.state.bloodType}
-                        </li>
-                        <li className="list-group-item">
-                            Heart Rate: {this.state.heartRate}
-                        </li>
-                        <li className="list-group-item">
-                            Breath Rate: {this.state.breathRate}
-                        </li>
-                        <li className="list-group-item">
-                            Blood Pressure: {this.state.bloodPressure}
-                        </li>
-                        <li className="list-group-item">
-                            Notes: {this.state.notes}
-                        </li>
-                    </ul>
-                </section>
-                <section className="patient-form">
+            <div className="forms">
+                <section className="patient-fill-out">
                 <form>
                     <div className="form-group">
                         <input
@@ -215,6 +187,34 @@ class Form extends Component {
                         // disabled={!(this.state.firstName)}
                         onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
                 </form>
+                </section>
+                <section className="patient-form">
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            Patient: {this.state.firstName} {this.state.lastName}
+                        </li>
+                        <li className="list-group-item">
+                            Date of Birth: {this.state.dateOfBirth}
+                        </li>
+                        <li className="list-group-item">
+                            Gender: {this.state.gender}
+                        </li>
+                        <li className="list-group-item">
+                            Blood-Type: {this.state.bloodType}
+                        </li>
+                        <li className="list-group-item">
+                            Heart Rate: {this.state.heartRate}
+                        </li>
+                        <li className="list-group-item">
+                            Breath Rate: {this.state.breathRate}
+                        </li>
+                        <li className="list-group-item">
+                            Blood Pressure: {this.state.bloodPressure}
+                        </li>
+                        <li className="list-group-item">
+                            Notes: {this.state.notes}
+                        </li>
+                    </ul>
                 </section>
                 <List>
                     {this.state.emcs.map(emc => (

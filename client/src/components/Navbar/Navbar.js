@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 const Navbar = () => (
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
     <img className="blue-cross-logo" src={BlueCross}/>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,49 +13,22 @@ const Navbar = () => (
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav ml-auto">
+
         <li className="nav-item">
-            <Link
-                to="/form"
-                className={
-                    window.location.pathname === "/form" ? "nav-link active" : "nav-link"
-                }
-            >
-                Form
-      </Link>
+        <a class="nav-link js-scroll-trigger" href="#form">Form</a>
         </li>
-        
+
         <li className="nav-item">
-            <Link
-                to="/records"
-                className={
-                    window.location.pathname === "/records" ? "nav-link active" : "nav-link"
-                }
-            >
-                Records
-       </Link>
+        <a class="nav-link js-scroll-trigger" href="#records">Records</a>
         </li>
 
 
         <li className="nav-item">
-            <Link
-                to="/chat"
-                className={
-                    window.location.pathname === "/chat" ? "nav-link active" : "nav-link"
-                }
-            >
-                Chat
-      </Link>
+        <a class="nav-link js-scroll-trigger" href="#chat">Chat</a>
         </li>
 
         <li className="nav-item">
-            <Link
-                to="/directions"
-                className={
-                    window.location.pathname === "/directions" ? "nav-link active" : "nav-link"
-                }
-            >
-                Directions
-      </Link>
+        <a class="nav-link js-scroll-trigger" href="#directions">Directions</a>
         </li>
 
     </ul>
