@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
-import User from "./pages/User/User.js";
+// import User from "./pages/User/User.js";
 import Form from "./components/Form/Form.js";
 import Chat from "./pages/Chat/Chat.js";
 import Directions from "./pages/Directions/Directions.js";
@@ -12,7 +12,7 @@ import Callback from './components/Login/Callback/Callback.js';
 import Auth from './Auth/Auth.js';
 import history from './history';
 import "./App.css";
-   
+
 const auth = new Auth();
 
 const handleAuthentication = ({ location }) => {
@@ -24,8 +24,8 @@ const handleAuthentication = ({ location }) => {
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     (auth.isAuthenticated() === true)
-    ? <Component {...props} />
-    : <Redirect to='/login' />
+      ? <Component {...props} />
+      : <Redirect to='/login' />
   )} />
 )
 
@@ -36,7 +36,7 @@ const App = () => (
       <Navbar />
       <PrivateRoute exact path="/form" component={Form} />
       <PrivateRoute exact path="/records" component={Records} />
-      <PrivateRoute exact path="/user" component={User} />
+      {/* <PrivateRoute exact path="/user" component={User} /> */}
       <PrivateRoute exact path="/chat" component={Chat} />
       <PrivateRoute exact path="/directions" component={Directions} />
       <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
