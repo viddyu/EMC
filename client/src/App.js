@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
 import Form from "./components/Form/Form.js";
-import Chat from "./pages/chat/Chat.js";
+import Chat from "./pages/Chat/Chat.js";
 import Directions from "./pages/Directions/Directions.js";
 import LoginLogout from "./components/Login/Login.js"
 import Status from "./components/Login/Status/Status.js"
