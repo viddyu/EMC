@@ -1,12 +1,9 @@
-header {
+section {
+  padding: 50px 0;
 }
 
 @media (min-width: 992px) {
   header {
     padding: 50px 0 50px;
   }
-}
-
-section {
-  padding: 50px 0;
 }

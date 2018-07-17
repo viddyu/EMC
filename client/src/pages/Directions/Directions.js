@@ -63,9 +63,9 @@ class Directions extends Component {
 
         return (
 
-            <div>
+            <div className="map-directions">
 
-                <div style={{ width: 900, height: 900 }}>
+                <div>
                     {/* The markers are the venues/hospitals where you need to go */}
                     <Map center={location} markers={this.state.venues} />
                 </div>
