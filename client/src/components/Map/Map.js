@@ -33,7 +33,8 @@ const MyMapComponent = compose(
 class Map extends Component {
     render() {
         return <MyMapComponent key="map" />
-    
+    }
+}
 
 
 export default Map;
