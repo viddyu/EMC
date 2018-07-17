@@ -54,10 +54,8 @@ class Records extends Component {
         console.log(this.state.emcs);
 
         return (
-            <Col size="md-6 sm-12">
-
-                EMC Records
-
+            <div className="records">
+                <form>
                 {this.state.emcs.length ? (
                     <List>
                         {this.state.emcs.map(emc => (
@@ -91,7 +89,8 @@ class Records extends Component {
                 ) : (
                         <h3>No Results to Display</h3>
                     )}
-            </Col>
+                </form>
+            </div>
         )
     }
 

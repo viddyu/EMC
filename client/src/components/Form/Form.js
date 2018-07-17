@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 import { Link } from "react-router-dom";
 import "./Form.css";
+import Records from "../../pages/Records/Records.js";
 // import App from "../../App";
 
 class Form extends Component {
@@ -90,37 +91,9 @@ class Form extends Component {
         // Notice how each input has a 'value', 'name', and 'onChange' prop
         return (
 
-            <div>
-                <div className="topList">
-                    <h1 className="App-title">Emergency Medical Communication</h1>
-                    <ul className="list-group">
-                        <li className="list-group-item">
-                            Patient: {this.state.firstName} {this.state.lastName}
-                        </li>
-                        <li className="list-group-item">
-                            Date of Birth: {this.state.dateOfBirth}
-                        </li>
-                        <li className="list-group-item">
-                            Gender: {this.state.gender}
-                        </li>
-                        <li className="list-group-item">
-                            Blood-Type: {this.state.bloodType}
-                        </li>
-                        <li className="list-group-item">
-                            Heart Rate: {this.state.heartRate}
-                        </li>
-                        <li className="list-group-item">
-                            Breath Rate: {this.state.breathRate}
-                        </li>
-                        <li className="list-group-item">
-                            Blood Pressure: {this.state.bloodPressure}
-                        </li>
-                        <li className="list-group-item">
-                            Notes: {this.state.notes}
-                        </li>
-                    </ul>
-                </div>
-                <form className="patient-form">
+            <div className="forms">
+                <section className="patient-fill-out">
+                <form>
                     <div className="form-group">
                         <input
                             value={this.state.firstName}
@@ -213,8 +186,12 @@ class Form extends Component {
                     </div>
                     <button
                         // disabled={!(this.state.firstName)}
-                        onClick={this.handleFormSubmit} className="btn btn-primary">Submit</button>
+                        onClick={this.handleFormSubmit} className="btn btn-primary patient-button">Submit</button>
                 </form>
+                </section>
+                <section>
+                    <Records/>
+                </section>
                 <List>
                     {this.state.emcs.map(emc => (
                         <ListItem key={emc._id}>

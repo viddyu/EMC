@@ -57,12 +57,10 @@ class User extends Component {
             API.saveUser({
                 Name: this.state.Name,
                 Email: this.state.Email,
-<<<<<<< HEAD
+
                 Role:  this.state.Role
-=======
                 Photo: this.state.Photo,
                 Role: this.state.Role
->>>>>>> dc1c087070ef72425026b8c875eaee7e17512513
             })
                 // .then(res => this.loadEMCs())
                 .then(res => this.loadUsers())
@@ -110,9 +108,7 @@ class User extends Component {
                             type="text"
                             placeholder="Name"
                         />
-<<<<<<< HEAD
-                        
-=======
+
                         <input
                             value={this.state.Photo}
                             name="Photo"
@@ -120,7 +116,6 @@ class User extends Component {
                             type="text"
                             placeholder="Photo"
                         />
->>>>>>> dc1c087070ef72425026b8c875eaee7e17512513
                         <input
                             value={this.state.email}
                             name="Email"

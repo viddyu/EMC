@@ -6,23 +6,21 @@ body {
     display: flex;
     flex-flow: row;
     width: 100%;
+    height: 600px;
+    border: solid 2px black;
     align-items: center;
-    align-content: center;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
 }
 
-.form-group {
+.chat-group {
     width: 90%;
     border-radius: 7px;
+    float: left;
 }
 
-.btn-primary {
-    margin-top: 10px;
-    margin-bottom: 15px;
+.chat-button {
     padding: 5px 15px;
     width: auto;
+    float: right;
 }
 
 #messages {

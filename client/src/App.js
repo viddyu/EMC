@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
 import Form from "./components/Form/Form.js";
-import Chat from "./pages/Chat/Chat.js";
+import Chat from "./pages/chat/Chat.js";
 import Directions from "./pages/Directions/Directions.js";
 import LoginLogout from "./components/Login/Login.js"
 import Status from "./components/Login/Status/Status.js"
@@ -33,19 +33,37 @@ const App = () => (
 
   <Router history={history}>
     <div>
-      <Navbar />
-      <PrivateRoute exact path="/form" component={Form} />
-      <PrivateRoute exact path="/records" component={Records} />
-      {/* <PrivateRoute exact path="/user" component={User} /> */}
-      <PrivateRoute exact path="/chat" component={Chat} />
-      <PrivateRoute exact path="/directions" component={Directions} />
-      <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
-      <Route path="/callback" render={(props) => {
-        handleAuthentication(props);
-        return <Callback {...props} />
-      }} />
+      <Navbar/>
+      
+      <section id="form">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Form/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chat" className="bg-light">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Chat/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section id="directions">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Directions/>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   </Router>
 

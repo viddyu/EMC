@@ -1,32 +1,24 @@
-.topList {
-    padding-top: 15px;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
 .App-title {
     font-family: 'Kumar One', cursive;
     font-size: 32px;
     text-align: center;
 }
 
-.patient-form {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+.patient-fill-out {
+    width: 50%;
+    float: left;
 }
 
+.patient-form {
+    width: 50%;
+    float: right;
+}
 
 .form-group {
-    margin-top: 5px;
-    margin-bottom: 5px;
     width: 50%;
 }
 
 .btn-primary {
-    margin-top: 10px;
-    margin-bottom: 15px;
     padding: 5px 15px;
     width: auto;
 }
