@@ -33,7 +33,21 @@ const MyMapComponent = compose(
 class Map extends Component {
     render() {
         return <MyMapComponent key="map" />
-    }
+
+            <div id="floating panel">
+                <b>Start: </b>
+                <select id="start">
+                    <option value="Cleveland Clinic">Cleveland Clinic</option>
+                    <option value="Metro Health Hospital">Metro Health Hospital</option>
+                    <option value="University Hospitals">University Hospitals</option>
+                </select>
+                <b>End: </b>
+                <select id="end">
+                    <option value=""
+                </select>
+            </div>
+
+                }
 }
 
 export default Map;
