@@ -65,9 +65,7 @@ class Directions extends Component {
 
             <div>
 
-                At least this is working!
-
-                <div style={{ width: 300, height: 600 }}>
+                <div style={{ width: 900, height: 900 }}>
                     {/* The markers are the venues/hospitals where you need to go */}
                     <Map center={location} markers={this.state.venues} />
                 </div>

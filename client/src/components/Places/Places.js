@@ -12,7 +12,6 @@ class Places extends Component {
 
         return (
             <div>
-                Hospitals
                 <ol>
                     {list}
                 </ol>

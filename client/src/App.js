@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
 import Form from "./components/Form/Form.js";
-import Chat from "./pages/chat/Chat.js";
+import Chat from "./pages/Chat/Chat.js";
 import Directions from "./pages/Directions/Directions.js";
 import LoginLogout from "./components/Login/Login.js"
 import Status from "./components/Login/Status/Status.js"
@@ -33,37 +33,37 @@ const App = () => (
 
   <Router history={history}>
     <div>
-      <Navbar/>
-      
+      <Navbar />
+
       <section id="form">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Form/>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <Form />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="chat" className="bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Chat/>
+      <section id="chat" className="bg-light">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <Chat />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-     <section id="directions">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Directions/>
+      <section id="directions">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <Directions />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   </Router>
 
