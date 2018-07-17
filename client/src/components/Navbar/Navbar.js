@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BlueCross from "./bluecross.png";
 import "./Navbar.css";
 
 const Navbar = () => (
 
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-    <img className="blue-cross-logo" src={BlueCross}/>
+    <h5>EMC/Emergency Medical Communication</h5>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" 
     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
