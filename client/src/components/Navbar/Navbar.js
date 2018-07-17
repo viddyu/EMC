@@ -14,6 +14,10 @@ const Navbar = () => (
     <ul className="navbar-nav ml-auto">
 
         <li className="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#login">Log In</a>
+        </li>
+
+        <li className="nav-item">
         <a class="nav-link js-scroll-trigger" href="#form">Form</a>
         </li>
 

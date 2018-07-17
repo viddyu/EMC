@@ -56,17 +56,19 @@ class Chat extends Component {
 
     render() {
         return (
-            <div>
+            <div className="chat">
                 <ul>
                     {this.state.messages.map((msg) =>
                         <li>{msg.from}: {msg.message}</li>)}
                 </ul>
-                <form className="chat-form" onSubmit={this.sendMessage}>
-                    <div className="form-group chat-group">
-                        <input className="form-control" onChange={this.updateInputChange} name="message"
-                            value={this.state.message} />
-                    <button className="btn btn-primary chat-button">Send</button>
+                <form onSubmit={this.sendMessage}>
+                    <div className="form-group chat-input">
+                        <input className="form-control" onChange={this.updateInputChange} 
+                        name="message" value={this.state.message} />
                     </div>
+                <div className="chat-button">
+                <button className="btn btn-primary">Send</button>
+                </div>
                 </form>
             </div>
         )
