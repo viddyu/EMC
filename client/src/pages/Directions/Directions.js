@@ -1,27 +1,83 @@
 import React, { Component } from "react";
+import Map from "../../components/Map";
+import Places from "../../components/Places";
 import "./Directions.css";
+import superagent from "superagent";
 
 class Directions extends Component {
 
-    //'user strick';
-    handleInit = () => {
-        // call functions
-//        initMap();
-//        ZoomControl();
-//        GeolocationControl();
-    };
-    //"https://maps.googleapis.com/maps/api/distancematrix/json?parameters";
+    constructor() {
+        super()
+        // Setting state to store data from the API return
+        // REMEMBER THAT VENUES WILL UPDATE BASED ON THE APIs JSON parse!!!!!
+        this.state = {
+            venues: []
+        }
+    }
 
-    // Google Directions API
-    // https://developers.google.com/maps/documentation/directions/intro?hl=en
+    // lifecycle method: triggering this function when the component mounts
+    // fires an API request to receive initial set of local hospital data
+    componentDidMount() {
+        console.log('componentDidMount');
+
+
+        const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.5074066,-81.60832649999999&radius=50&types=hospital&&key=AIzaSyCIONgJx9RS8JG4QFsjD5fi3PyLrPEOpuQ";
+
+        // chaining four functions onto each other
+        superagent
+            .get(url)
+            .query(null)
+            .set('Accept', 'text/json')
+            .end((error, response) => {
+
+                // DEPENDS ON LOGIC OF API
+                // const venues = response.body.response.venues;
+
+                // Supplied local hospital data within 25 mile radius from Google Places API
+                // console.log(JSON.stringify(venues));
+
+
+                // this.setState({
+                //     venues: venues
+                // })
+            })
+    }
 
     render() {
+
+        const location = {
+            // Thwing
+            lat: 41.5074066,
+            lng: -81.60832649999999
+        }
+
+        const markers = [
+            {
+                location: {
+                    // Thwing
+                    lat: 41.5074066,
+                    lng: -81.60832649999999
+                }
+            }
+        ];
+
         return (
+
             <div>
-                <h1>This is where the directions API goes</h1>
+
+                At least this is working!
+
+                <div style={{ width: 300, height: 600 }}>
+                    {/* The markers are the venues/hospitals where you need to go */}
+                    <Map center={location} markers={this.state.venues} />
+                </div>
+
+                <Places venues={this.state.venues} />
+
             </div>
+
         )
     }
-};
+}
 
 export default Directions;

@@ -24,7 +24,6 @@ const Navbar = () => (
         <li className="nav-item">
         <a class="nav-link js-scroll-trigger" href="#directions">Directions</a>
         </li>
-
     </ul>
     </div>
     </nav>
