@@ -38,19 +38,7 @@ const App = () => (
       <section id="form">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Form />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="directions">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Directions />
-            </div>
+            <Form />
           </div>
         </div>
       </section>
@@ -65,8 +53,16 @@ const App = () => (
         </div>
       </section>
 
-    </div>
-  </Router>
+      <section id="directions">
+        <div className="container">
+          <div className="row">
+            <Directions />
+          </div>
+        </div>
+      </section>
+
+    </div >
+  </Router >
 
 );
 
