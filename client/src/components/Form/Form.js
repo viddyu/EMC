@@ -199,11 +199,11 @@ class Form extends Component {
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.medicalCondition}
+                                name="medicalCondition"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Pre-existing Medical Conditions"
                                 className="form-control"
                             />
                         </div>
@@ -319,21 +319,21 @@ class Form extends Component {
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.dispositionOutcome}
+                                name="DispositionOutcome"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Disposition/Call Outcome"
                                 className="form-control"
                             />
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.eMT}
+                                name="EMT"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="EMT Reporting for Duty"
                                 className="form-control"
                             />
                         </div>
