@@ -97,6 +97,8 @@ class Form extends Component {
             <div className="forms">
                 <section className="patient-fill-out">
                     <form>
+                        <h1>Individual Patient Care Report</h1>
+                        <h1>EMT's Name</h1>
                         <div className="form-group">
                             <input
                                 value={this.state.eMT}
@@ -107,6 +109,46 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <h1>Shift Date</h1>
+                        <h1>Service Name</h1>
+                        <h1>Time in</h1>
+                        <h1>Time Out</h1>
+                        <br></br>
+                        <h1>Dispatch</h1>
+                        <div className="form-group">
+                            <input
+                                value={this.state.dispatch}
+                                name="dispatch"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Non-Emergent, Transfer Emergent, Arrest/Critical, Nonembergent"
+                                className="form-control"
+                            />
+                        </div>
+                        <h1>Disposition/Call Outcome/Status</h1>
+                        <div className="form-group">
+                            <input
+                                value={this.state.dispositionOutcome}
+                                name="DispositionOutcome"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Disposition/Call Outcome/Status"
+                                className="form-control"
+                            />
+                        </div>
+                        <h1>Chief Complaint</h1>
+                        <div className="form-group">
+                            <input
+                                value={this.state.dispatch}
+                                name="dispatch"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Non-Emergent, Transfer Emergent, Arrest/Critical, Nonembergent"
+                                className="form-control"
+                            />
+                        </div>
+
+                        
                         <div className="form-group">
                             <input
                                 value={this.state.firstName}
@@ -244,16 +286,6 @@ class Form extends Component {
                                 onChange={this.handleInputChange}
                                 type="text"
                                 placeholder="Medication History"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.dispositionOutcome}
-                                name="DispositionOutcome"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Disposition/Call Outcome"
                                 className="form-control"
                             />
                         </div>
