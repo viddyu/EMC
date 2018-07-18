@@ -32,38 +32,43 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 class App extends Component {
 
   render() {
-    return (
 
-      <Router history={history}>
-        <div>
-          <Navbar />
+    <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
+      <Route path="/callback" render={(props) => { handleAuthentication(props); return <Callback {...props} /> }} />
 
-          <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-          <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-          <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
-          <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
-
-
-          <div id="form">
-            <div className="form-container">
+      <section id="form">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
               <Form />
             </div>
           </div>
+        </div>
+      </section >
 
-          <div id="directions">
-            <div className="directions-container">
-              <Directions />
-            </div>
-          </div>
 
-          <div id="chat">
-            <div className="container">
-              <Chat />
-            </div>
-          </div>
+      <div id="form">
+        <div className="form-container">
+          <Form />
+        </div>
+      </div>
+
+      <div id="directions">
+        <div className="directions-container">
+          <Directions />
+        </div>
+      </div>
+
+      <div id="chat">
+        <div className="container">
+          <Chat />
+        </div>
+      </div>
 
         </div >
-      </Router>
+      </Router >
     )
   }
 };
