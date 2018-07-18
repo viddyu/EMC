@@ -93,104 +93,104 @@ class Form extends Component {
 
             <div className="forms">
                 <section className="patient-fill-out">
-                <form>
-                    <div className="form-group">
-                        <input
-                            value={this.state.firstName}
-                            name="firstName"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="First Name"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.lastName}
-                            name="lastName"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Last Name"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.age}
-                            name="dateOfBirth"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="MM/DD/YYYY"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.gender}
-                            name="gender"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Gender"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.bloodType}
-                            name="bloodType"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Blood Type"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.heartRate}
-                            name="heartRate"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Heart Rate"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.breathRate}
-                            name="breathRate"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Breath Rate"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.bloodPressure}
-                            name="bloodPressure"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Blood Pressure"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            value={this.state.notes}
-                            onChange={this.handleInputChange}
-                            name="notes"
-                            type="text"
-                            placeholder="Additional Notes(Optional)"
-                            className="form-control"
-                        />
-                    </div>
-                    <button
-                        // disabled={!(this.state.firstName)}
-                        onClick={this.handleFormSubmit} className="btn btn-primary patient-button">Submit</button>
-                </form>
+                    <form>
+                        <div className="form-group">
+                            <input
+                                value={this.state.firstName}
+                                name="firstName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="First Name"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.lastName}
+                                name="lastName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Last Name"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.age}
+                                name="dateOfBirth"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Date of Birth (MM/DD/YYYY)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.gender}
+                                name="gender"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Gender (e.g. Male, Female, *Leave Blank*)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bloodType}
+                                name="bloodType"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Blood Type (e.g. O, A+, AB-, etc.)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.heartRate}
+                                name="heartRate"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Heart Rate (e.g. 80 bpm)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.breathRate}
+                                name="breathRate"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Breath Rate (e.g. 45 breaths/minute)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bloodPressure}
+                                name="bloodPressure"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Blood Pressure (e.g. 120/80 mmHg)"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                value={this.state.notes}
+                                onChange={this.handleInputChange}
+                                name="notes"
+                                type="text"
+                                placeholder="Additional Notes (Optional)"
+                                className="form-control"
+                            />
+                        </div>
+                        <button
+                            // disabled={!(this.state.firstName)}
+                            onClick={this.handleFormSubmit} className="btn btn-primary patient-button">Submit</button>
+                    </form>
                 </section>
                 <section>
-                    <Records/>
+                    <Records />
                 </section>
                 <List>
                     {this.state.emcs.map(emc => (
