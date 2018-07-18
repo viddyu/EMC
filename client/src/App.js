@@ -51,11 +51,11 @@ class App extends Component {
             </div>
           </div>
 
-          {/* <div id="directions">
+          <div id="directions">
             <div className="directions-container">
               <Directions />
             </div>
-          </div> */}
+          </div>
 
           {/* <div id="chat">
             <div className="container">
