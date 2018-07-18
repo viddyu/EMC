@@ -1,36 +1,64 @@
-section {
-  padding: 20px;
+/* background color for the entire page */
+html {
+  background-color: gray;
 }
 
+/* Carries the div form, positions it on the left corner */
+#form {
+  float: left;
+  position: fixed;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+/* Sets the div on which the .map-directions div sits */
+#directions {
+  float: fixed;
+  width: 100%;
+  background-color: gray;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+/* Shrinks the map and positions it on the page in the right corner */
+.map-directions {
+  position: static;
+  float: right;
+  padding-top: 50px;
+  padding-left: 800px;
+  width: 98%;
+}
+
+/* ensures no extra padding/margin on map container */
+.directions-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+#chat {
+  background-color: white;
+  position: static;
+  float: right;
+  width: 700px;
+  height: 400px;
+  border-style: ridge;
+  box-shadow: 1px 1px 5px black, 0 0 5px darkblue;
+  margin: 20px;
+  margin-right: 185px;
+}
+
+/* Gives the form & record area a nice background, and positions it nicely just a little space below the navbar */
+.form-container {
+  background-color: brown;
+  width: 200%;
+  height: 200%;
+  margin: 10px;
+}
+
+/* Animation to create a responsive page with the width dips below 992px */
 @media (min-width: 992px) {
   header {
     padding: 50px 0 50px;
   }
-}
-
-#form {
-  float: left;
-  position: static;
-  height: 25%;
-}
-
-#directions {
-  float: inherit;
-  width: 100%;
-}
-
-/* Positioning the map lower on the page in the right corner */
-.map-directions {
-  position: static;
-  float: right;
-  padding-top: 40px;
-  width: 100%;
-}
-
-#chat {
-  position: absolute;
-  float: right;
-  right: 400px;
-  width: 800px;
-  height: 400px;
 }

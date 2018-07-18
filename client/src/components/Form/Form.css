@@ -1,28 +1,47 @@
+/* Controls button properties */
+button {
+    margin-left: 225px;
+    display: inline-block;
+}
+
+/* Controls area where inputs are sitting on */
 .patient-fill-out {
-    width: 50%;
+    width: 60%;
     float: left;
 }
 
-/* .patient-form {
-    width: 50%;
-    float: right;
-} */
-
+/* Control width of inputs */
 .form-group {
-    width: 100%;
+    width: 98%;
 }
 
+/* lowers form submission & records div below the navbar
+ALSO
+Controls the height of the div that the form and records area are sitting on */
+#form {
+    margin-top: 40px;
+    height: 48%;
+}
+
+/* Space inbetween inputs */
+.form-group {
+    margin: 10px;
+}
+
+/* Height and font inside of inputs */
+input {
+    height: 20px;
+    font-size: 8px;
+}
+
+/* positions records area */
+.list-group {
+padding: 10px;
+}
+
+/* animation for responsive properties once the screen is narrower than 600px */
 @media only screen and (max-width: 600px) {
     .App-title{
         font-size: 25px;
     }
-}
-
-#form {
-    margin-top: 40px;
-    height: 50%;
-}
-
-.form-group {
-    margin: 10px;
 }

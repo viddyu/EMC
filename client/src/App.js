@@ -1,5 +1,5 @@
-import React from "react";
-import { withRouter, BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
@@ -15,11 +15,11 @@ import "./App.css";
 
 const auth = new Auth();
 
-const handleAuthentication = ({ location }) => {
+const handleAuthentication = (({ location }) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
-}
+});
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -29,11 +29,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )} />
 )
 
-const App = () => {
+class App extends Component {
 
-  < div >
-    <Navbar />
+  render() {
 
+<<<<<<< HEAD
     <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
     <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
     <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
@@ -48,27 +48,42 @@ const App = () => {
         </div>
       </div>
     </section >
+=======
+    return (
 
-    <section id="directions">
-      <div className="container">
-        <div className="row">
-          <Directions />
-        </div>
-      </div>
-    </section>
+      <Router history={history}>
+        <div>
+          <Navbar />
 
-    <section id="chat" className="bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Chat />
+          <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
+          <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
+>>>>>>> 3c160b28a928d0dd9c0d1b2a3eef8c729b066e5a
+
+
+          <div id="form">
+            <div className="form-container">
+              <Form />
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-  </div >
+          <div id="directions">
+            <div className="directions-container">
+              <Directions />
+            </div>
+          </div>
 
+          <div id="chat">
+            <div className="container">
+              <Chat />
+            </div>
+          </div>
+
+        </div >
+      </Router>
+    )
+  }
 };
 
 export default App;
