@@ -35,6 +35,11 @@ const App = () => (
     <div>
       <Navbar />
 
+      <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
+      <Route path="/callback" render={(props) => {handleAuthentication(props); return <Callback {...props} /> }} />
+
       <section id="form">
         <div className="container">
           <div className="row">

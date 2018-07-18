@@ -14,19 +14,19 @@ const Navbar = () => (
     <ul className="navbar-nav ml-auto">
 
         <li className="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#login">Log In</a>
+        <Link to="/login" className="nav-link js-scroll-trigger" href="#login">Log In</Link>
         </li>
 
         <li className="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#form">Form</a>
+        <a className="nav-link js-scroll-trigger" href="#form">Form</a>
         </li>
 
         <li className="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#chat">Chat</a>
+        <a className="nav-link js-scroll-trigger" href="#chat">Chat</a>
         </li>
 
         <li className="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#directions">Directions</a>
+        <a className="nav-link js-scroll-trigger" href="#directions">Directions</a>
         </li>
     </ul>
     </div>

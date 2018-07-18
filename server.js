@@ -113,7 +113,7 @@ wss.on("readFile", function (filename) {
 wss.on("connection", (socket) => {
     console.log("new connection!");
     // Set name to what username is supposed to be
-    socket.set("name", Math.random());
+    socket.set("name", Math.random());  // localStorage.getItem("name"));
     socket.emit("chatMessage", `Welcome to chat, ${socket.get('name')}!`)
 });
 wss.on("disconnect", (socket) => {
