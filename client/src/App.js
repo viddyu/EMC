@@ -1,5 +1,5 @@
-import React from "react";
-import { withRouter, BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import React, {Component} from "react";
+import {withRouter, BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
@@ -29,24 +29,29 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )} />
 )
 
-const App = () => {
 
-  < div >
+class App extends Component {
+
+  render(){
+
+    return(
+    <Router history={history}>
+    <div>
     <Navbar />
 
     <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-    < Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-    < Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
-    < Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
+    <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+    <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
+    <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
 
 
-    < section id="form" >
+    <section id="form">
       <div className="container">
         <div className="row">
           <Form />
         </div>
       </div>
-    </section >
+    </section>
 
     <section id="directions">
       <div className="container">
@@ -66,8 +71,10 @@ const App = () => {
       </div>
     </section>
 
-  </div >
-
+  </div>
+    </Router>
+  )
+  }
 };
 
 export default App;
