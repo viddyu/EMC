@@ -48,10 +48,12 @@ class Login extends Component {
             <div>
                 {/* <App /> */}
                 <div>
-                    <header>
-                        <h1 className="App-title">Emergency Medical Communication</h1>
-                    </header>
-                    <div>
+                     <header>
+                         <h1 className="LoginInstructions">Warning - Access is for Emergency Responders Only.</h1>
+                         <br />
+                         <h1>Please Dial 911 if you have an emergency!</h1>
+                     </header>
+                     <div>
                         {
                             !auth.isAuthenticated() && (
                                 <button
@@ -79,35 +81,7 @@ class Login extends Component {
                             )
                         }
                     </div>
-                    <div id="profile-view" className="panel panel-default profile-area">
-                        <div className="panel-heading"><h3>Profile</h3></div>
-                            <div className="panel-body">
-                                <img className="avatar" alt="avatar" src={avatar}></img>
-                                <div>
-                                    <label><i className="glyphicon glyphicon-user"></i> Nickname</label>
-                                    <h3 className="nickname">_</h3>
-                                </div>
-                                <pre className="full-profile"></pre>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                         type="button"
-                         id="btn-profile-view"
-                         className="btn btn-primary btn-margin"
-                         onClick={this.profile.bind(this)}
-                    >
-                            Profile
-                    </button>
-                    <button
-                         type="button"
-                         id="btn-profile-view"
-                         className="btn btn-secondary btn-margin"
-                         onClick={this.register.bind(this)}
-                    >
-                            Register
-                    </button>
- 
+                </div>
             </div>
         );
     }
