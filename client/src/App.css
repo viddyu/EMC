@@ -1,3 +1,7 @@
+html {
+  background-color: gray;
+}
+
 section {
   padding: 20px;
 }
@@ -17,6 +21,7 @@ section {
 #directions {
   float: inherit;
   width: 100%;
+  background-color: gray;
 }
 
 /* Positioning the map lower on the page in the right corner */
@@ -24,7 +29,8 @@ section {
   position: static;
   float: right;
   padding-top: 40px;
-  width: 100%;
+  padding-left: 85px;
+  width: 75%;
 }
 
 #chat {
@@ -33,4 +39,6 @@ section {
   right: 400px;
   width: 800px;
   height: 400px;
+  border-style: ridge;
+  box-shadow: 1px 1px 5px black, 0 0 5px darkblue;
 }

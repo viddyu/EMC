@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {withRouter, BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
@@ -15,11 +15,11 @@ import "./App.css";
 
 const auth = new Auth();
 
-const handleAuthentication = ({ location }) => {
+const handleAuthentication = (({ location }) => {
   if (/access_token|id_token|error/.test(location.hash)) {
     auth.handleAuthentication();
   }
-}
+});
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -29,51 +29,51 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )} />
 )
 
-
 class App extends Component {
 
-  render(){
+  render() {
 
-    return(
-    <Router history={history}>
-    <div>
-    <Navbar />
+    return (
 
-    <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-    <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
-    <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
-    <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
+      <Router history={history}>
+        <div>
+          <Navbar />
+
+          <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
+          <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
 
 
-    <section id="form">
-      <div className="container">
-        <div className="row">
-          <Form />
-        </div>
-      </div>
-    </section>
+          <section id="form">
+            <div className="container">
+              <div className="row">
+                <Form />
+              </div>
+            </div>
+          </section>
 
-    <section id="directions">
-      <div className="container">
-        <div className="row">
-          <Directions />
-        </div>
-      </div>
-    </section>
+          <section id="directions">
+            <div className="container">
+              <div className="row">
+                <Directions />
+              </div>
+            </div>
+          </section>
 
-    <section id="chat" className="bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <Chat />
-          </div>
-        </div>
-      </div>
-    </section>
+          <section id="chat" className="bg-light">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-8 mx-auto">
+                  <Chat />
+                </div>
+              </div>
+            </div>
+          </section>
 
-  </div>
-    </Router>
-  )
+        </div >
+      </Router>
+    )
   }
 };
 

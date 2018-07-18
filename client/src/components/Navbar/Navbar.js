@@ -20,24 +20,6 @@ const Navbar = () => (
                         <div to="/login" class="nav-link js-scroll-trigger" href="#login"><i><b>Login</b></i></div>
                     </div>
                 </li>
-
-                <li className="nav-item">
-                    <div className="navbar-item">
-                        <a class="nav-link js-scroll-trigger" href="#form"><i><b>Form</b></i></a>
-                    </div>
-                </li>
-
-                <li className="nav-item">
-                    <div className="navbar-item">
-                        <a class="nav-link js-scroll-trigger" href="#chat"><i><b>Chat</b></i></a>
-                    </div>
-                </li>
-
-                <li className="nav-item">
-                    <div className="navbar-item">
-                        <a class="nav-link js-scroll-trigger" href="#directions"><i><b>Directions</b></i></a>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
