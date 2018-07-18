@@ -114,7 +114,7 @@ wss.on("connection", (socket) => {
     console.log("new connection!");
     // Set name to what username is supposed to be
     socket.set("name", Math.random());
-    socket.emit("chatMessage", `Welcome to chat, ${socket.get('name')}!`)
+    socket.emit("chatMessage", `Welcome to EMC. Please state your emergency, ${socket.get('name')}!`)
 });
 wss.on("disconnect", (socket) => {
     // When any user disconnects, run this...
