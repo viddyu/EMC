@@ -99,6 +99,16 @@ class Form extends Component {
                     <form>
                         <div className="form-group">
                             <input
+                                value={this.state.eMT}
+                                name="EMT"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="EMT Name on Duty"
+                                className="form-control"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
                                 value={this.state.firstName}
                                 name="firstName"
                                 onChange={this.handleInputChange}
@@ -189,16 +199,6 @@ class Form extends Component {
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.notes}
-                                onChange={this.handleInputChange}
-                                name="notes"
-                                type="text"
-                                placeholder="Additional Notes (Optional)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
                                 value={this.state.medicalCondition}
                                 name="medicalCondition"
                                 onChange={this.handleInputChange}
@@ -209,111 +209,41 @@ class Form extends Component {
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.allergies}
+                                name="allergies"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Allergies"
                                 className="form-control"
                             />
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.medicalTrauma}
+                                name="medicalTrauma"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Medical/Trauma"
                                 className="form-control"
                             />
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.mechanismOfInjury}
+                                name="mechanismOfInjury"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Mechanism of Injury (Ejection, Rollover, Penetration)"
                                 className="form-control"
                             />
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.medicationHistory}
+                                name="medicationHistory"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
+                                placeholder="Medication History"
                                 className="form-control"
                             />
                         </div>
@@ -329,11 +259,11 @@ class Form extends Component {
                         </div>
                         <div className="form-group">
                             <input
-                                value={this.state.eMT}
-                                name="EMT"
+                                value={this.state.notes}
                                 onChange={this.handleInputChange}
+                                name="notes"
                                 type="text"
-                                placeholder="EMT Reporting for Duty"
+                                placeholder="Assessment-Based Management/Plan/Treatment Narrative"
                                 className="form-control"
                             />
                         </div>
