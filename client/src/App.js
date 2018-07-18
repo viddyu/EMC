@@ -45,31 +45,23 @@ class App extends Component {
           <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
 
 
-          <section id="form">
-            <div className="container">
-              <div className="row">
-                <Form />
-              </div>
+          <div id="form">
+            <div className="form-container">
+              <Form />
             </div>
-          </section>
+          </div>
 
-          <section id="directions">
-            <div className="container">
-              <div className="row">
-                <Directions />
-              </div>
+          {/* <div id="directions">
+            <div className="directions-container">
+              <Directions />
             </div>
-          </section>
+          </div> */}
 
-          <section id="chat" className="bg-light">
+          {/* <div id="chat">
             <div className="container">
-              <div className="row">
-                <div className="col-lg-8 mx-auto">
-                  <Chat />
-                </div>
-              </div>
+              <Chat />
             </div>
-          </section>
+          </div> */}
 
         </div >
       </Router>

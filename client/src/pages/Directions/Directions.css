@@ -1,3 +1,5 @@
 .map-directions{
-	width: 100%;
+	width: 50%;
+	float: right;
+	position: static;
 }
