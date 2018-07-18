@@ -45,6 +45,16 @@ const App = () => (
         </div>
       </section>
 
+      <section id="directions">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <Directions />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="chat" className="bg-light">
         <div className="container">
           <div className="row">
@@ -55,15 +65,6 @@ const App = () => (
         </div>
       </section>
 
-      <section id="directions">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Directions />
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   </Router>
 

@@ -1,4 +1,18 @@
-.blue-cross-logo{
-	width: 35px;
-	height: 35px;
+#mainNav {
+	margin: 0;
+	padding: 0;
+	border-style: ridge;
+	background-color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-link:hover {
+	box-shadow: 1px 1px 5px black, 0 0 5px darkblue;
+	background: radial-gradient(white, lightblue);
+	font-weight: 400;
+}
+
+.nav-link {
+	padding: 10px;
+	margin-left: 20px;
 }
