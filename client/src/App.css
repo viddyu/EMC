@@ -1,9 +1,36 @@
 section {
-  padding: 50px 0;
+  padding: 20px;
 }
 
 @media (min-width: 992px) {
   header {
     padding: 50px 0 50px;
   }
+}
+
+#form {
+  float: left;
+  position: static;
+  height: 25%;
+}
+
+#directions {
+  float: inherit;
+  width: 100%;
+}
+
+/* Positioning the map lower on the page in the right corner */
+.map-directions {
+  position: static;
+  float: right;
+  padding-top: 40px;
+  width: 100%;
+}
+
+#chat {
+  position: absolute;
+  float: right;
+  right: 400px;
+  width: 800px;
+  height: 400px;
 }

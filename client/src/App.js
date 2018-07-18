@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { withRouter, BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.js";
 import Records from "./pages/Records/Records.js";
 // import User from "./pages/User/User.js";
@@ -25,53 +25,50 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     (auth.isAuthenticated() === true)
       ? <Component {...props} />
-      : <Redirect to='/login' />
+      : <Redirect push to={"/login"} />
   )} />
 )
 
-const App = () => (
+const App = () => {
 
-  <Router history={history}>
-    <div>
-      <Navbar />
+  < div >
+    <Navbar />
 
-      <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
-      <Route path="/callback" render={(props) => {handleAuthentication(props); return <Callback {...props} /> }} />
+    <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+    <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
+    <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
+    <Route path="/callback" render={(props) => {handleAuthentication(props); return <Callback {...props} /> }} />
 
-      <section id="form">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Form />
-            </div>
+    <section id="form">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Form />
           </div>
         </div>
-      </section>
+      </div>
+    </section >
 
-      <section id="chat" className="bg-light">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Chat />
-            </div>
+    <section id="directions">
+      <div className="container">
+        <div className="row">
+          <Directions />
+        </div>
+      </div>
+    </section>
+
+    <section id="chat" className="bg-light">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <Chat />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="directions">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Directions />
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </Router>
+  </div >
 
-);
+};
 
 export default App;

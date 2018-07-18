@@ -3,10 +3,10 @@
     float: left;
 }
 
-.patient-form {
+/* .patient-form {
     width: 50%;
     float: right;
-}
+} */
 
 .form-group {
     width: 100%;
@@ -16,4 +16,13 @@
     .App-title{
         font-size: 25px;
     }
+}
+
+#form {
+    margin-top: 40px;
+    height: 50%;
+}
+
+.form-group {
+    margin: 10px;
 }
