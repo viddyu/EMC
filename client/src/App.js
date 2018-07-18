@@ -57,11 +57,11 @@ class App extends Component {
             </div>
           </div>
 
-          {/* <div id="chat">
+          <div id="chat">
             <div className="container">
               <Chat />
             </div>
-          </div> */}
+          </div>
 
         </div >
       </Router>
