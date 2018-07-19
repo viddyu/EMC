@@ -97,12 +97,12 @@ class Form extends Component {
             <div className="forms">
                 <section className="patient-fill-out">
                     <form>
-                        <h8>Individual Patient Care Report</h8>
-                        <h5>EMT's Name</h5>
+                        <h6>Individual Patient Care Report</h6>
+                        <h8>EMT's Name</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.eMT}
-                                name="EMT"
+                                name="eMT"
                                 onChange={this.handleInputChange}
                                 type="text"
                                 placeholder="EMT Name on Duty"
@@ -110,9 +110,49 @@ class Form extends Component {
                             />
                         </div>
                         <h8>Shift Date</h8><br></br>
+                        <div className="form-group">
+                            <input
+                                value={this.state.shiftDate}
+                                name="shiftDate"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Date (MM/DD/YYYY)"
+                                className="form-control"
+                            />
+                        </div>
                         <h8>Service Name</h8><br></br>
+                        <div className="form-group">
+                            <input
+                                value={this.state.serviceName}
+                                name="serviceName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Service Name"
+                                className="form-control"
+                            />
+                        </div>
                         <h8>Time in</h8><br></br>
+                        <div className="form-group">
+                            <input
+                                value={this.state.timeIn}
+                                name="timeIn"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Time (hh:mm) am/pm"
+                                className="form-control"
+                            />
+                        </div>
                         <h8>Time Out</h8><br></br>
+                        <div className="form-group">
+                            <input
+                                value={this.state.timeOut}
+                                name="timeOut"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Time (hh:mm) am/pm"
+                                className="form-control"
+                            />
+                        </div>
                         <h8>Dispatch</h8>
                         <div className="form-group">
                             <input
@@ -146,135 +186,58 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
-
-                        <h8>Primary & Secondary Field Impression</h8>
-                        <h8>(what do you think is wrong with the patient?)</h8>
-
-                        <h8>medical</h8><br></br>
-                        <h8>(placeholders/field titles)abdominal/gi, respiratory, cardiac</h8><br></br>
-
-                        <h8>Trauma</h8><br></br>
-                        <h8>(placeholders)abdominal, chest, extremities</h8><br></br>
-                        {/* // ------------------------------------------------------------------------------------------------ */}
-                        <h8>Medical History</h8><br></br>
-                        <h8>SEE DOC</h8><br></br>
-                        <h8>mech of Injury</h8><br></br>
-
-                        <h8>medication</h8><br></br>
-
-                        <h8>past history</h8><br></br>
-
+                        <br></br>
+                        <h6>Primary & Secondary Field Impression</h6>
+                        <h9>(what do you think is wrong with the patient?)</h9>
+                        <br></br>
+                        <h8>Medical</h8>
                         <div className="form-group">
                             <input
-                                value={this.state.medicalTrauma}
-                                name="medicalTrauma"
+                                value={this.state.medical}
+                                name="medical"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Medical/Trauma"
+                                placeholder="Abdominal/GI, Respiration, Cardiac"
                                 className="form-control"
                             />
                         </div>
-
+                        <h8>Trauma</h8>
                         <div className="form-group">
                             <input
-                                value={this.state.firstName}
-                                name="firstName"
+                                value={this.state.trauma}
+                                name="trauma"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="First Name"
+                                placeholder="Abdominal, Chest, Extremities"
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
+                        <h6>Medical History</h6>
+                        <br></br>
+                        <h8>Medication</h8>
                         <div className="form-group">
                             <input
-                                value={this.state.lastName}
-                                name="lastName"
+                                value={this.state.medication}
+                                name="medication"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Last Name"
+                                placeholder="Medication"
                                 className="form-control"
                             />
                         </div>
+                        <h8>Past History</h8>
                         <div className="form-group">
                             <input
-                                value={this.state.age}
-                                name="dateOfBirth"
+                                value={this.state.pastHistory}
+                                name="pastHistory"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Date of Birth (MM/DD/YYYY)"
+                                placeholder="Past History"
                                 className="form-control"
                             />
                         </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.gender}
-                                name="gender"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Gender (e.g. Male, Female, *Leave Blank*)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.race}
-                                name="race"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Race (African American, American Indian, Asian, Caucasian, etc.)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.bloodType}
-                                name="bloodType"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Blood Type (e.g. O, A+, AB-, etc.)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.heartRate}
-                                name="heartRate"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Heart Rate (e.g. 80 bpm)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.breathRate}
-                                name="breathRate"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Breath Rate (e.g. 45 breaths/minute)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.bloodPressure}
-                                name="bloodPressure"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Blood Pressure (e.g. 120/80 mmHg)"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.medicalCondition}
-                                name="medicalCondition"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Pre-existing Medical Conditions"
-                                className="form-control"
-                            />
-                        </div>
+                        <h8>Allergies</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.allergies}
@@ -285,26 +248,250 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
+                        <h6>Vital Signs</h6>
+                        <br></br>
+                        <h8>Blood Pressure</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bloodPressure}
+                                name="bloodPressure"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Blood Pressure (e.g. 120/80 mmHg)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Pulse</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.heartRate}
+                                name="heartRate"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Heart Rate (e.g. 80 bpm)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Respiratory Rate</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.breathRate}
+                                name="breathRate"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Breath Rate (e.g. 45 breaths/minute)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Loc-AVPU</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.locAVPU}
+                                name="locAVPU"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Alert, Verbal, Painful, Unresponsive (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <br></br>
+                        <h6>Initial Glasgow Coma Scale</h6>
+                        <br></br>
+                        <h8>Eyes Open</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.eyesOpen}
+                                name="eyesOpen"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Spontaneous, To Voice, To Pain, None (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Best Verbal</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bestVerbal}
+                                name="bestVerbal"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Oriented, Confused, Inappropriate, Garbled, None (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Best Motor</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bestMotor}
+                                name="bestMotor"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Obeys Commands, Pain/Local, Pain/Withdrawal, Pain/Flexion, Pain/Extension, None (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <br></br>
+                        <h6>ALS Procedures</h6>
+                        <br></br>
+                        <h8>Airway</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.airway}
+                                name="airway"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Attempts, Success, ET Size (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>ALS IV/IO Access</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.ivIoAccess}
+                                name="ivIoAccess"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Attempts, Success, Site Gauge (Pick One)"
+                                className="form-control"
+                            />
+                        </div>
+                        <br></br>
+                        <h6>Medication</h6>
+                        <br></br>
+                        <h8>Drug</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.drug}
+                                name="drug"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Drug"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Dose</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.dose}
+                                name="dose"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Dose"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Route</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.route}
+                                name="route"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Route"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Mechanism of Injury</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.mechanismOfInjury}
                                 name="mechanismOfInjury"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Mechanism of Injury (Ejection, Rollover, Penetration)"
+                                placeholder="Mechanism of Injury (e.g. Ejection, Rollover, Penetration)"
                                 className="form-control"
                             />
                         </div>
+                        <h8>Medical/Trauma</h8>
                         <div className="form-group">
                             <input
-                                value={this.state.medicationHistory}
-                                name="medicationHistory"
+                                value={this.state.medicalTrauma}
+                                name="medicalTrauma"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Medication History"
+                                placeholder="Medical/Trauma"
                                 className="form-control"
                             />
                         </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.firstName}
+                                name="firstName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="First Name"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.lastName}
+                                name="lastName"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Last Name"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.age}
+                                name="dateOfBirth"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Date of Birth (MM/DD/YYYY)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.gender}
+                                name="gender"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Gender (e.g. Male, Female, *Leave Blank*)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.race}
+                                name="race"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Race (African American, American Indian, Asian, Caucasian, etc.)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.bloodType}
+                                name="bloodType"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Blood Type (e.g. O, A+, AB-, etc.)"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
+                        <div className="form-group">
+                            <input
+                                value={this.state.medicalCondition}
+                                name="medicalCondition"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Pre-existing Medical Conditions"
+                                className="form-control"
+                            />
+                        </div>
+                        <h8>Medical/Trauma</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.notes}
