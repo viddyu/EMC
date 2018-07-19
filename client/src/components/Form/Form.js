@@ -151,6 +151,18 @@ class Form extends Component {
                         <h1>Primary & Secondary Field Impression</h1>
                         <h1>(what do you think is wrong with the patient?)</h1>
 
+                        medical
+                        abdominal/gi, respiratory, cardiac
+
+Trauma
+abdominal, chest, extremities
+
+mech of Injury
+
+Medical history (section)
+medication
+past history
+
                         <div className="form-group">
                             <input
                                 value={this.state.medicalTrauma}
