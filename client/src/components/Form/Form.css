@@ -9,7 +9,7 @@ h8 {
     padding-left: 10px;
 }
 
-/* Controls the height of the notes/assessment-based management patient narrative input */
+/* Controls the height of the notes/assessment-based management patient narrative and the patient's past medical history textarea */
 #notes {
     height: 180px;
     font-size: 14px;
@@ -42,9 +42,9 @@ Controls the height of the div that the form and records area are sitting on */
     margin: 10px;
 }
 
-/* Height and font inside of inputs */
+/* Height and font inside of textareas */
 #input {
-    height: 20px;
+    height: 26px;
     font-size: 14px;
     line-height: 10px;
     width: 98%;

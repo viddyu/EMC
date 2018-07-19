@@ -66,9 +66,9 @@ class Chat extends Component {
                     <div className="form-group chat-input">
                         <textarea className="form-control" onChange={this.updateInputChange}
                             name="message" value={this.state.message} />
-                    </div>
-                    <div className="chat-button">
-                        <button className="btn btn-primary">Send</button>
+                        <div className="chat-button">
+                            <button className="btn btn-primary">Send</button>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -188,6 +188,7 @@ class Form extends Component {
                             />
                         </div>
                         <br></br>
+                        <br></br>
                         <strong><h6>Primary & Secondary Field Impression</h6></strong>
                         <strong><h9>(what do you think is wrong with the patient?)</h9></strong><br></br>
                         <br></br>
@@ -213,6 +214,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
                         <br></br>
                         <strong><h6>Medical History</h6></strong>
                         <br></br>
@@ -249,6 +251,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
                         <br></br>
                         <strong><h6>Vital Signs</h6></strong>
                         <br></br>
@@ -297,6 +300,7 @@ class Form extends Component {
                             />
                         </div>
                         <br></br>
+                        <br></br>
                         <strong><h6>Initial Glasgow Coma Scale</h6></strong>
                         <br></br>
                         <i><h8>Eyes Open</h8></i>
@@ -333,6 +337,7 @@ class Form extends Component {
                             />
                         </div>
                         <br></br>
+                        <br></br>
                         <strong><h6>ALS Procedures</h6></strong>
                         <br></br>
                         <i><h8>Airway</h8></i>
@@ -357,6 +362,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
                         <br></br>
                         <strong><h6>Medication</h6></strong>
                         <br></br>
@@ -415,6 +421,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
                         <br></br>
                         <strong><h6>Patient information</h6></strong>
                         <br></br>
@@ -495,6 +502,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
+                        <br></br>
                         <br></br>
                         <strong><h6>Assessment-Based Management/Plan/Treatment Narrative</h6></strong>
                         <div className="form-group">
