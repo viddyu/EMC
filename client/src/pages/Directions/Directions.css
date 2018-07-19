@@ -1,5 +1,8 @@
+/* Shrinks the map and positions it on the page in the right corner */
 .map-directions{
-	width: 50%;
+	width: 100%;
 	float: right;
 	position: static;
+	padding-top: 50px;
+	padding-left: 800px;
 }

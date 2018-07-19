@@ -64,7 +64,7 @@ class Chat extends Component {
                 </ul>
                 <form className="chat-form" onSubmit={this.sendMessage}>
                     <div className="form-group chat-input">
-                        <input className="form-control" onChange={this.updateInputChange}
+                        <textarea className="form-control" onChange={this.updateInputChange}
                             name="message" value={this.state.message} />
                     </div>
                     <div className="chat-button">

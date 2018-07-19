@@ -4,6 +4,17 @@ button {
     display: inline-block;
 }
 
+/* controls space to the left of italicized h8 tags on the form */
+h8 {
+    padding-left: 10px;
+}
+
+/* Controls the height of the notes/assessment-based management patient narrative input */
+#notes {
+    height: 180px;
+    font-size: 16px;
+}
+
 /* Controls area where inputs are sitting on */
 .patient-fill-out {
     overflow: auto;
@@ -13,12 +24,7 @@ button {
 
 /* Control width of inputs */
 .form-group {
-    width: 98%;
-}
-
-.forms {
-    height: 200%;
-    overflow: auto;
+    width: 100%;
 }
 
 /* lowers form submission & records div below the navbar
@@ -37,12 +43,15 @@ Controls the height of the div that the form and records area are sitting on */
 /* Height and font inside of inputs */
 input {
     height: 20px;
-    font-size: 8px;
+    line-height: 10px;
 }
 
 /* positions records area */
 .list-group {
 padding: 10px;
+padding-left: 30px;
+width: 100%;
+height: 300%;
 }
 
 /* animation for responsive properties once the screen is narrower than 600px */
