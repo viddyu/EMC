@@ -97,8 +97,8 @@ class Form extends Component {
             <div className="forms">
                 <section className="patient-fill-out">
                     <form>
-                        <h1>Individual Patient Care Report</h1>
-                        <h1>EMT's Name</h1>
+                        <h8>Individual Patient Care Report</h8>
+                        <h5>EMT's Name</h5>
                         <div className="form-group">
                             <input
                                 value={this.state.eMT}
@@ -109,12 +109,11 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
-                        <h1>Shift Date</h1>
-                        <h1>Service Name</h1>
-                        <h1>Time in</h1>
-                        <h1>Time Out</h1>
-                        <br></br>
-                        <h1>Dispatch</h1>
+                        <h8>Shift Date</h8><br></br>
+                        <h8>Service Name</h8><br></br>
+                        <h8>Time in</h8><br></br>
+                        <h8>Time Out</h8><br></br>
+                        <h8>Dispatch</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.dispatch}
@@ -125,7 +124,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
-                        <h1>Disposition/Call Outcome/Status</h1>
+                        <h8>Disposition/Call Outcome/Status</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.dispositionOutcome}
@@ -136,7 +135,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
-                        <h1>Chief Complaint</h1>
+                        <h8>Chief Complaint</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.chiefComplaint}
@@ -148,20 +147,21 @@ class Form extends Component {
                             />
                         </div>
 
-                        <h1>Primary & Secondary Field Impression</h1>
-                        <h1>(what do you think is wrong with the patient?)</h1>
+                        <h8>Primary & Secondary Field Impression</h8>
+                        <h8>(what do you think is wrong with the patient?)</h8>
 
-                        medical
-                        abdominal/gi, respiratory, cardiac
+                        <h8>medical</h8><br></br>
+                        <h8>(placeholders/field titles)abdominal/gi, respiratory, cardiac</h8><br></br>
 
-Trauma
-abdominal, chest, extremities
+                        <h8>Trauma</h8><br></br>
+                        <h8>(placeholders)abdominal, chest, extremities</h8><br></br>
 
-mech of Injury
+                        <h8>Medical History</h8><br></br>
+                        <h8>mech of Injury</h8><br></br>
 
-Medical history (section)
-medication
-past history
+                        <h8>medication</h8><br></br>
+
+                        <h8>past history</h8><br></br>
 
                         <div className="form-group">
                             <input
