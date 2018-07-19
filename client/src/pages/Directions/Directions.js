@@ -22,24 +22,6 @@ class Directions extends Component {
 
         const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.5074066,-81.60832649999999&radius=50&types=hospital&&key=AIzaSyCIONgJx9RS8JG4QFsjD5fi3PyLrPEOpuQ";
 
-        // chaining four functions onto each other
-        superagent
-            .get(url)
-            .query(null)
-            .set('Accept', 'text/json')
-            .end((error, response) => {
-
-                // DEPENDS ON LOGIC OF API
-                // const venues = response.body.response.venues;
-
-                // Supplied local hospital data within 25 mile radius from Google Places API
-                // console.log(JSON.stringify(venues));
-
-
-                // this.setState({
-                //     venues: venues
-                // })
-            })
     }
 
     render() {
