@@ -12,7 +12,9 @@ h8 {
 /* Controls the height of the notes/assessment-based management patient narrative input */
 #notes {
     height: 180px;
-    font-size: 16px;
+    font-size: 14px;
+    width: 98%;
+    line-height: 10px;
 }
 
 /* Controls area where inputs are sitting on */
@@ -41,9 +43,11 @@ Controls the height of the div that the form and records area are sitting on */
 }
 
 /* Height and font inside of inputs */
-input {
+#input {
     height: 20px;
+    font-size: 14px;
     line-height: 10px;
+    width: 98%;
 }
 
 /* positions records area */

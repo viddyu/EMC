@@ -57,11 +57,11 @@ class App extends Component {
             </div>
           </section>
 
-          <section id="chat" className="bg-light">
+          {/* <section id="chat" className="bg-light">
             <div className="chat-container">
               <Chat />
             </div>
-          </section>
+          </section> */}
 
         </div >
       </Router>

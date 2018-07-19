@@ -101,7 +101,7 @@ class Form extends Component {
                         <strong><h6>Individual Patient Care Report</h6></strong>
                         <i><h8>EMT's Name</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.eMT}
                                 name="eMT"
                                 onChange={this.handleInputChange}
@@ -112,7 +112,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Shift Date</h8></i><br></br>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.shiftDate}
                                 name="shiftDate"
                                 onChange={this.handleInputChange}
@@ -123,7 +123,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Service Name</h8></i><br></br>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.serviceName}
                                 name="serviceName"
                                 onChange={this.handleInputChange}
@@ -134,7 +134,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Time in</h8></i><br></br>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.timeIn}
                                 name="timeIn"
                                 onChange={this.handleInputChange}
@@ -145,7 +145,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Time Out</h8></i><br></br>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.timeOut}
                                 name="timeOut"
                                 onChange={this.handleInputChange}
@@ -156,7 +156,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Dispatch</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.dispatch}
                                 name="dispatch"
                                 onChange={this.handleInputChange}
@@ -167,7 +167,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Disposition/Call Outcome/Status</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.dispositionOutcome}
                                 name="DispositionOutcome"
                                 onChange={this.handleInputChange}
@@ -178,7 +178,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Chief Complaint</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.chiefComplaint}
                                 name="chiefComplaint"
                                 onChange={this.handleInputChange}
@@ -193,7 +193,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Medical</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.medical}
                                 name="medical"
                                 onChange={this.handleInputChange}
@@ -204,7 +204,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Trauma</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.trauma}
                                 name="trauma"
                                 onChange={this.handleInputChange}
@@ -218,7 +218,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Medication</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.medication}
                                 name="medication"
                                 onChange={this.handleInputChange}
@@ -229,7 +229,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Past History</h8></i>
                         <div className="form-group">
-                            <textarea
+                            <textarea id="notes"
                                 value={this.state.pastHistory}
                                 name="pastHistory"
                                 onChange={this.handleInputChange}
@@ -240,7 +240,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Allergies</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.allergies}
                                 name="allergies"
                                 onChange={this.handleInputChange}
@@ -254,7 +254,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Blood Pressure</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.bloodPressure}
                                 name="bloodPressure"
                                 onChange={this.handleInputChange}
@@ -265,7 +265,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Pulse</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.heartRate}
                                 name="heartRate"
                                 onChange={this.handleInputChange}
@@ -276,7 +276,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Respiratory Rate</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.breathRate}
                                 name="breathRate"
                                 onChange={this.handleInputChange}
@@ -287,7 +287,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Loc-AVPU</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.locAVPU}
                                 name="locAVPU"
                                 onChange={this.handleInputChange}
@@ -301,7 +301,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Eyes Open</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.eyesOpen}
                                 name="eyesOpen"
                                 onChange={this.handleInputChange}
@@ -312,7 +312,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Best Verbal</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.bestVerbal}
                                 name="bestVerbal"
                                 onChange={this.handleInputChange}
@@ -323,7 +323,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Best Motor</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.bestMotor}
                                 name="bestMotor"
                                 onChange={this.handleInputChange}
@@ -337,7 +337,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Airway</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.airway}
                                 name="airway"
                                 onChange={this.handleInputChange}
@@ -348,7 +348,7 @@ class Form extends Component {
                         </div>
                         <i><h8>ALS IV/IO Access</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.ivIoAccess}
                                 name="ivIoAccess"
                                 onChange={this.handleInputChange}
@@ -362,7 +362,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>Drug</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.drug}
                                 name="drug"
                                 onChange={this.handleInputChange}
@@ -373,7 +373,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Dose</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.dose}
                                 name="dose"
                                 onChange={this.handleInputChange}
@@ -384,7 +384,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Route</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.route}
                                 name="route"
                                 onChange={this.handleInputChange}
@@ -395,7 +395,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Mechanism of Injury</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.mechanismOfInjury}
                                 name="mechanismOfInjury"
                                 onChange={this.handleInputChange}
@@ -406,7 +406,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Medical/Trauma</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.medicalTrauma}
                                 name="medicalTrauma"
                                 onChange={this.handleInputChange}
@@ -420,7 +420,7 @@ class Form extends Component {
                         <br></br>
                         <i><h8>First Name</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.firstName}
                                 name="firstName"
                                 onChange={this.handleInputChange}
@@ -431,7 +431,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Last Name</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.lastName}
                                 name="lastName"
                                 onChange={this.handleInputChange}
@@ -442,7 +442,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Date of Birth</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.age}
                                 name="dateOfBirth"
                                 onChange={this.handleInputChange}
@@ -453,7 +453,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Gender</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.gender}
                                 name="gender"
                                 onChange={this.handleInputChange}
@@ -464,7 +464,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Race</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.race}
                                 name="race"
                                 onChange={this.handleInputChange}
@@ -475,7 +475,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Blood Type</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.bloodType}
                                 name="bloodType"
                                 onChange={this.handleInputChange}
@@ -486,7 +486,7 @@ class Form extends Component {
                         </div>
                         <i><h8>Pre-existing Medical Conditions</h8></i>
                         <div className="form-group">
-                            <input
+                            <textarea id="input"
                                 value={this.state.medicalCondition}
                                 name="medicalCondition"
                                 onChange={this.handleInputChange}
