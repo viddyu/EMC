@@ -24,8 +24,9 @@ class Chat extends Component {
         this.socket.on('connection', () => console.log("yay!"));*/
 
         // create connection to server
+        const protocol = window.location.protocol.replace("http", "ws");
         this.socket = new WebSocketWrapper(
-            new WebSocket("ws://" + window.location.host + "/socket")
+            new WebSocket(protocol + "//" + window.location.host + "/socket")
         );
         this.socket.on("chatMessage", (from, message) => {
             const { messages } = this.state;
