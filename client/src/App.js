@@ -33,42 +33,46 @@ class App extends Component {
 
   render() {
 
-    <Route path="/logout" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/login" component={LoginLogout} render={(props) => <App auth={auth} {...props} />} />
-      <Route path="/status" render={(props) => <Status auth={auth} {...props} />} />
-      <Route path="/callback" render={(props) => { handleAuthentication(props); return <Callback {...props} /> }} />
+    return (
+      <Router>
+        <div>
 
-      <section id="form">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <Form />
+          <Navbar />
+
+          <Route path={'/logout'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/login'} component={LoginLogout} render={(history) => <App auth={auth} {...history} />} />
+          <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
+          <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
+
+
+          <section id="form">
+            <div className="container">
+              <div className="row">
+                <Form />
+              </div>
             </div>
-          </div>
-        </div>
-      </section >
+          </section>
 
+          <section id="directions">
+            <div className="container">
+              <div className="row">
+                <Directions />
+              </div>
+            </div>
+          </section>
 
-      <div id="form">
-        <div className="form-container">
-          <Form />
-        </div>
-      </div>
-
-      <div id="directions">
-        <div className="directions-container">
-          <Directions />
-        </div>
-      </div>
-
-      <div id="chat">
-        <div className="container">
-          <Chat />
-        </div>
-      </div>
+          <section id="chat" className="bg-light">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-8 mx-auto">
+                  <Chat />
+                </div>
+              </div>
+            </div>
+          </section>
 
         </div >
-      </Router >
+      </Router>
     )
   }
 };

@@ -139,16 +139,29 @@ class Form extends Component {
                         <h1>Chief Complaint</h1>
                         <div className="form-group">
                             <input
-                                value={this.state.dispatch}
-                                name="dispatch"
+                                value={this.state.chiefComplaint}
+                                name="chiefComplaint"
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Non-Emergent, Transfer Emergent, Arrest/Critical, Nonembergent"
+                                placeholder="Chief Complaint"
                                 className="form-control"
                             />
                         </div>
 
-                        
+                        <h1>Primary & Secondary Field Impression</h1>
+                        <h1>(what do you think is wrong with the patient?)</h1>
+
+                        <div className="form-group">
+                            <input
+                                value={this.state.medicalTrauma}
+                                name="medicalTrauma"
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Medical/Trauma"
+                                className="form-control"
+                            />
+                        </div>
+
                         <div className="form-group">
                             <input
                                 value={this.state.firstName}
@@ -256,16 +269,6 @@ class Form extends Component {
                                 onChange={this.handleInputChange}
                                 type="text"
                                 placeholder="Allergies"
-                                className="form-control"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                value={this.state.medicalTrauma}
-                                name="medicalTrauma"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Medical/Trauma"
                                 className="form-control"
                             />
                         </div>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Map from "../../components/Map";
 import Places from "../../components/Places";
 import "./Directions.css";
-import superagent from "superagent";
 
 class Directions extends Component {
 
