@@ -53,7 +53,7 @@ class App extends Component {
             </div>
           </section>
 
-          <section id="directions">
+          {/* <section id="directions">
             <div className="container">
               <div className="row">
                 <Directions />
@@ -69,7 +69,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
         </div >
       </Router>

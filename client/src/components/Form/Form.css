@@ -6,6 +6,7 @@ button {
 
 /* Controls area where inputs are sitting on */
 .patient-fill-out {
+    overflow: auto;
     width: 60%;
     float: left;
 }
@@ -13,6 +14,11 @@ button {
 /* Control width of inputs */
 .form-group {
     width: 98%;
+}
+
+.forms {
+    height: 200%;
+    overflow: auto;
 }
 
 /* lowers form submission & records div below the navbar

@@ -175,7 +175,7 @@ class Form extends Component {
                                 className="form-control"
                             />
                         </div>
-                        <h8>Chief Complaint</h8>
+                        {/* <h8>Chief Complaint</h8>
                         <div className="form-group">
                             <input
                                 value={this.state.chiefComplaint}
@@ -501,7 +501,7 @@ class Form extends Component {
                                 placeholder="Assessment-Based Management/Plan/Treatment Narrative"
                                 className="form-control"
                             />
-                        </div>
+                        </div> */}
                         <button
                             // disabled={!(this.state.firstName)}
                             onClick={this.handleFormSubmit} className="btn btn-primary patient-button">
