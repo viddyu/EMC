@@ -155,8 +155,9 @@ class Form extends Component {
 
                         <h8>Trauma</h8><br></br>
                         <h8>(placeholders)abdominal, chest, extremities</h8><br></br>
-
+                        {/* // ------------------------------------------------------------------------------------------------ */}
                         <h8>Medical History</h8><br></br>
+                        <h8>SEE DOC</h8><br></br>
                         <h8>mech of Injury</h8><br></br>
 
                         <h8>medication</h8><br></br>
