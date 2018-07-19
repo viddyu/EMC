@@ -10,6 +10,30 @@ class Form extends Component {
     // Setting the component's initial state
     state = {
         emcs: [],
+        eMT: "",
+        shiftDate: "",
+        serviceName: "",
+        timeIn: "",
+        timeOut: "",
+        dispatch: "",
+        dispositionOutcome: "",
+        chiefComplaint: "",
+        medical: "",
+        trauma: "",
+        medication: "",
+        pastHistory: "",
+        allergies: "",
+        locAVPU: "",
+        eyesOpen: "",
+        bestVerbal: "",
+        bestMotor: "",
+        airway: "",
+        ivIoAccess: "",
+        drug: "",
+        dose: "",
+        route: "",
+        mechanismOfInjury: "",
+        medicalTrauma: "",
         firstName: "",
         lastName: "",
         dateOfBirth: "",
@@ -19,6 +43,7 @@ class Form extends Component {
         heartRate: "",
         breathRate: "",
         bloodPressure: "",
+        medicalCondition: "",
         notes: ""
     };
 
@@ -36,34 +61,81 @@ class Form extends Component {
         // Preventing the default behavior of the form submit 
         event.preventDefault();
 
-        if (this.state.firstName &&
+        if (this.state.eMT &&
+            this.state.shiftDate &&
+            this.state.serviceName &&
+            this.state.timeIn &&
+            this.state.timeOut &&
+            this.state.dispatch &&
+            this.state.chiefComplaint &&
+            this.state.medical &&
+            this.state.trauma &&
+            this.state.medication &&
+            this.state.pastHistory &&
+            this.state.allergies &&
+            this.state.locAVPU &&
+            this.state.eyesOpen &&
+            this.state.bestVerbal &&
+            this.state.bestMotor &&
+            this.state.airway &&
+            this.state.ivIoAccess &&
+            this.state.drug &&
+            this.state.dose &&
+            this.state.route &&
+            this.state.mechanismOfInjury &&
+            this.state.medicalTrauma &&
+            this.state.firstName &&
             this.state.lastName &&
+            this.state.dateOfBirth &&
+            this.state.gender &&
+            this.state.race &&
+            this.state.bloodType &&
             this.state.heartRate &&
             this.state.breathRate &&
-            this.state.bloodPressure) {
+            this.state.bloodPressure &&
+            this.state.medicalCondition &&
+            this.state.notes
+        ) {
 
-            alert(`Submitted:
-            First name: ${this.state.firstName}\n 
-            Last name: ${this.state.lastName}\n
-            Date of Birth: ${this.state.dateOfBirth}\n
-            Gender: ${this.state.gender}\n
-            Race: ${this.state.race}\n
-            Blood Type: ${this.state.bloodType}\n
-            Heart Rate: ${this.state.heartRate}\n
-            Breath Rate: ${this.state.breathRate}\n
-            Blood Pressure: ${this.state.bloodPressure}\n
-            Notes: ${this.state.notes}`);
+            alert(`Information Submited!`);
+
 
             API.saveEMC({
+                eMT: this.state.eMT,
+                shiftDate: this.state.shiftDate,
+                serviceName: this.state.serviceName,
+                timeIn: this.state.timeIn,
+                timeOut: this.state.timeOut,
+                Dispatch: this.state.dispatch,
+                dispositionOutcome: this.state.dispositionOutcome,
+                chiefComplaint: this.state.chiefComplaint,
+                medical: this.state.medical,
+                trauma: this.state.trauma,
+                medication: this.state.medication,
+                pastHistory: this.state.pastHistory,
+                allergies: this.state.allergies,
+                locAVPU: this.state.locAVPU,
+                eyesOpen: this.state.eyesOpen,
+                bestVerbal: this.state.bestVerbal,
+                bestMotor: this.state.bestMotor,
+                airway: this.state.airway,
+                ivIoAccess: this.state.ivIoAccess,
+                drug: this.state.drug,
+                dose: this.state.dose,
+                route: this.state.route,
+                mechanismOfInjury: this.state.mechanismOfInjury,
+                medicalTrauma: this.state.medicalTrauma,
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 dateOfBirth: this.state.dateOfBirth,
                 gender: this.state.gender,
                 race: this.state.race,
-                bloodType: this.state.bloodType,
+                bloodtype: this.state.bloodType,
                 heartRate: this.state.heartRate,
                 breathRate: this.state.breathRate,
                 bloodPressure: this.state.bloodPressure,
+                medicalCondition: this.state.medicalCondition,
+                notes: this.state.notes
             })
                 // .then(res => this.loadEMCs())
                 .then(res => this.loadEMCs())
