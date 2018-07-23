@@ -49,38 +49,40 @@ class Login extends Component {
                 {/* <App /> */}
                 <div>
                      <header>
+                        <span className="loginlogout">
                          <h1 className="LoginInstructions">Warning - Access is for Emergency Responders Only.</h1>
                          <br />
                          <h1>Please Dial 911 if you have an emergency!</h1>
-                     </header>
-                     <div>
-                        {
+                         <div>
+                         {
                             !auth.isAuthenticated() && (
                                 <button
                                      type="button"
                                      id="qsLoginBtn"
-                                     className="btn-margin"
+                                     className="btn btn-primary"
                                      onClick={this.login.bind(this)}
                                     >
                                       Log In
                                     </button> 
                             )
-                        }
-                    </div>
-                    <div>
-                        {
+                         }
+                         </div>
+                         <div>
+                         {
                             auth.isAuthenticated() && (
                                 <button
                                      type="button"
                                      id="qsLogoutBtn"
-                                     className="btn-margin"
+                                     className="btn btn-primary"
                                      onClick={this.logout.bind(this)}
                                     >
                                       Log Out
                                     </button>
                             )
-                        }
-                    </div>
+                         }
+                         </div>
+                        </span>
+                    </header>
                 </div>
             </div>
         );

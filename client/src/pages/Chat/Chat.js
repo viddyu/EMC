@@ -67,6 +67,7 @@ class Chat extends Component {
         if(auth.isAuthenticated)
         {
           auth.getProfile();  // Get Profile Info form login
+          this.socket.set("name", localStorage.getItem("name"));
         }    
         this.socket.emit("chatMessage", this.state.message);
         this.setState({ message: "" });

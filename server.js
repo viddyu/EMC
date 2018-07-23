@@ -110,8 +110,9 @@ wss.on("readFile", function (filename) {
     });
 });
 
-wss.on("connection", (socket) => {
+wss.on("connection", (socket, user) => {
     // When any user connects
+    socket.set("name", user);
     console.log("hello!", socket.get("name"));
     socket.emit("chatMessage", `Welcome to EMC. Please state your emergency, ${socket.get('name')}!`)
 });
