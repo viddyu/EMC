@@ -47,27 +47,19 @@ class App extends Component {
 
           <section id="form">
             <div className="container">
-              <div className="row">
-                <Form />
-              </div>
+              <Form />
             </div>
           </section>
 
           <section id="directions">
             <div className="container">
-              <div className="row">
-                <Directions />
-              </div>
+              <Directions />
             </div>
           </section>
 
           <section id="chat" className="bg-light">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-8 mx-auto">
-                  <Chat />
-                </div>
-              </div>
+            <div className="chat-container">
+              <Chat />
             </div>
           </section>
 
