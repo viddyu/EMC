@@ -137,8 +137,7 @@ class Form extends Component {
                 medicalCondition: this.state.medicalCondition,
                 notes: this.state.notes
             })
-                // .then(res => this.loadEMCs())
-                .then(res => this.loadEMCs())
+                .then(res => API.loadEMCs())
                 .catch(err => console.log(err));
         }
 
@@ -241,7 +240,7 @@ class Form extends Component {
                         <div className="form-group">
                             <textarea id="input"
                                 value={this.state.dispositionOutcome}
-                                name="DispositionOutcome"
+                                name="dispositionOutcome"
                                 onChange={this.handleInputChange}
                                 type="text"
                                 placeholder="Disposition/Call Outcome/Status"

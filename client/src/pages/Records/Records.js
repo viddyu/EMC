@@ -8,32 +8,104 @@ import "./Records.css"
 class Records extends Component {
 
     state = {
-        emcs: [],
+        eMT: [],
+        shiftDate: "",
+        serviceName: "",
+        timeIn: "",
+        timeOut: "",
+        Dispatch: "",
+        dispositionOutcome: "",
+        chiefComplaint: "",
+        medical: "",
+        trauma: "",
+        medication: "",
+        pastHistory: "",
+        allergies: "",
+        locAVPU: "",
+        eyesOpen: "",
+        bestVerbal: "",
+        bestMotor: "",
+        airway: "",
+        ivIoAccess: "",
+        drug: "",
+        dose: "",
+        route: "",
+        mechanismOfInjury: "",
+        medicalTrauma: "",
         firstName: "",
         lastName: "",
         dateOfBirth: "",
         gender: "",
-        bloodType: "",
+        race: "",
+        bloodtype: "",
         heartRate: "",
         breathRate: "",
         bloodPressure: "",
+        medicalCondition: "",
         notes: ""
+
+//        emcs: [],
+//        firstName: "",
+//        lastName: "",
+//        dateOfBirth: "",
+//        gender: "",
+//        bloodType: "",
+//        heartRate: "",
+//        breathRate: "",
+//        bloodPressure: "",
+//        notes: ""
+
     };
 
     loadEMCs = () => {
         API.getEMCs()
             .then(res =>
                 this.setState({
-                    emcs: res.data,
-                    firstName: "",
-                    lastName: "",
-                    dateOfBirth: "",
-                    gender: "",
-                    bloodType: "",
-                    heartRate: "",
-                    breathRate: "",
-                    bloodPressure: "",
-                    notes: ""
+                    eMT: res.data,
+                    shiftDate: res.shiftDate,
+                    serviceName: res.serviceName,
+                    timeIn: res.timeIn,
+                    timeOut: res.timeOut,
+                    Dispatch: res.Dispatch,
+                    dispositionOutcome: res.dispositionOutcome,
+                    chiefComplaint: res.chiefComplaint,
+                    medical: res.medical,
+                    trauma: res.trauma,
+                    medication: res.medication,
+                    pastHistory: res.pastHistory,
+                    allergies: res.allergies,
+                    locAVPU: res.locAVPU,
+                    eyesOpen: res.eyesOpen,
+                    bestVerbal: res.bestVerbal,
+                    bestMotor: res.bestMotor,
+                    airway: res.airway,
+                    ivIoAccess: res.ivIoAccess,
+                    drug: res.drug,
+                    dose: res.dose,
+                    route: res.route,
+                    mechanismOfInjury: res.mechanismOfInjury,
+                    medicalTrauma: res.medicalTrauma,
+                    firstName: res.firstName,
+                    lastName: res.lastName,
+                    dateOfBirth: res.dateOfBirth,
+                    gender: res.gender,
+                    race: res.race,
+                    bloodtype: res.bloodPressure,
+                    heartRate: res.heartRate,
+                    breathRate: res.breathRate,
+                    bloodPressure: res.bloodPressure,
+                    medicalCondition: res.medicalCondition,
+                    notes: res.notes  
+//                    emcs: res.data,
+//                    firstName: "",
+//                    lastName: "",
+//                    dateOfBirth: "",
+//                    gender: "",
+//                    bloodType: "",
+//                    heartRate: "",
+//                    breathRate: "",
+//                    bloodPressure: "",
+//                    notes: ""
                 })
             )
             .catch(err => console.log(err));
@@ -51,14 +123,14 @@ class Records extends Component {
 
     render() {
 
-        console.log(this.state.emcs);
+        console.log(this.state.eMT);
 
         return (
             <div className="records">
                 <form>
-                {this.state.emcs.length ? (
+                {this.state.eMT.length ? (
                     <List>
-                        {this.state.emcs.map(emc => (
+                        {this.state.eMT.map(emc => (
                             <ListItem key={emc._id}>
                                 <Link to={"/emcs/" + emc._id}>
                                     <strong>

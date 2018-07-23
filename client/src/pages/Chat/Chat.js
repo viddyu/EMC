@@ -32,6 +32,15 @@ class Chat extends Component {
         this.socket = new WebSocketWrapper(
             new WebSocket(protocol + "//" + window.location.host + "/socket")
         );
+        if(auth.isAuthenticated)
+        {
+            auth.getProfile();
+            this.socket.set("name", localStorage.getItem("name"));
+        }
+        else
+        {
+            this.socket.set("name", Math.random());
+        }
         this.socket.on("chatMessage", (from, message) => {
             const { messages } = this.state;
             this.setState({

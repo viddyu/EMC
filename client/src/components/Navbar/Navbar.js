@@ -17,7 +17,7 @@ const Navbar = () => (
 
                 <li className="nav-item">
                     <div className="navbar-item">
-                        <Link to="/login" class="nav-link js-scroll-trigger" href="#login"><i><b>Login</b></i></Link>
+                        <Link to="/login" className="nav-link js-scroll-trigger" href="#login"><i><b>Login</b></i></Link>
                     </div>
                 </li>
             </ul>

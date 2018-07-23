@@ -58,12 +58,11 @@ class User extends Component {
                 Name: this.state.Name,
                 Email: this.state.Email,
 
-                Role:  this.state.Role
+                Role:  this.state.Role,
                 Photo: this.state.Photo,
                 Role: this.state.Role
             })
-                // .then(res => this.loadEMCs())
-                .then(res => this.loadUsers())
+                .then(res => API.loadUsers())
                 .catch(err => console.log(err));
         }
 

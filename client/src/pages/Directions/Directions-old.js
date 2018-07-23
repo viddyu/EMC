@@ -136,7 +136,7 @@ import "./Directions.css";
 //     var contentString2 =
 
 //         '<div id ="container-infobox">' +
-//         '<h1> <a href="#" class="direction">' + pos.title + '</a><h1>' +
+//         '<h1> <a href="#" class=Name"direction">' + pos.title + '</a><h1>' +
 //         '<div style=" background: url(' + "static/images/picture.jp" + ') no-repeat center; width: 250px; height: 200px"' +
 //         '</div>' +
 //         '</div>';
