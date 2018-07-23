@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import Auth from '../../Auth/Auth.js';
 import "./Chat.css";
 //import * as io from 'socket.io-client';
 import * as WebSocketWrapper from 'ws-wrapper'
+const auth = new Auth();
 
 class Chat extends Component {
     state = {
@@ -25,6 +27,8 @@ class Chat extends Component {
 
         // create connection to server
         const protocol = window.location.protocol.replace("http", "ws");
+        if(auth.isAuthenticated)
+           auth.getProfile();
         this.socket = new WebSocketWrapper(
             new WebSocket(protocol + "//" + window.location.host + "/socket")
         );
@@ -51,6 +55,10 @@ class Chat extends Component {
 
     sendMessage = (event) => {
         event.preventDefault();
+        if(auth.isAuthenticated)
+        {
+          auth.getProfile();  // Get Profile Info form login
+        }    
         this.socket.emit("chatMessage", this.state.message);
         this.setState({ message: "" });
     };

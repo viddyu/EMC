@@ -75,36 +75,38 @@ export default class Auth {
 
       if (!accessToken) {
         console.log('Access token must exist to fetch profile');
+        // TBD Note: Add some code to zero out local storage of profile ino
       }
-
-      this.auth0.client.userInfo(accessToken, function(err, profile) {
-        if (profile) {
-          userProfile = profile;
-          displayProfile();
-          saveProfile();
-        }
-      });
-    } else {
-      displayProfile();
+      else
+      {
+        this.auth0.client.userInfo(localStorage.getItem('access_token'), function(err, profile) {
+          if (profile) {
+            userProfile = profile;
+          //  displayProfile();
+            saveProfile();
+          }
+        });
+      }
+//    } else {
+//      displayProfile();
+//    }
     }
   }
 }
+  function displayProfile() {
+    // display the profile
+    document.querySelector('#profile-view .nickname').innerHTML =
+      userProfile.nickname;
+    document.querySelector(
+      '#profile-view .full-profile'
+    ).innerHTML = JSON.stringify(userProfile, null, 2);
+    document.querySelector('#profile-view img').src = userProfile.picture;
+  }
 
-function displayProfile() {
-  // display the profile
-  document.querySelector('#profile-view .nickname').innerHTML =
-    userProfile.nickname;
-  document.querySelector(
-    '#profile-view .full-profile'
-  ).innerHTML = JSON.stringify(userProfile, null, 2);
-  document.querySelector('#profile-view img').src = userProfile.picture;
-}
-
-function saveProfile() {
-  // save the profile
-   localStorage.setItem('name', userProfile.nickname);
-   localStorage.setItem('email', userProfile.name);
-   localStorage.setItem('photo', userProfile.picture);
-}
-
+  function saveProfile() {
+    // save the profile
+    localStorage.setItem('name', userProfile.nickname);
+    localStorage.setItem('email', userProfile.name);
+    localStorage.setItem('photo', userProfile.picture);
+  }
 
