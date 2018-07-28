@@ -112,14 +112,15 @@ wss.on("readFile", function (filename) {
 
 wss.on("connection", (socket, user) => {
     // When any user connects
-    socket.set("name", user);
-    console.log("hello!", socket.get("name"));
-    socket.emit("chatMessage", `Welcome to EMC. Please state your emergency, ${socket.get('name')}!`)
+    let userName =  ', ' + socket.get("name");
+    socket.set("name", userName);
+    console.log("hello!", userName);
+    socket.emit("chatMessage", "Welcome to EMC. Please state your emergency ", socket.get("name") + ".");
 });
 wss.on("disconnect", (socket) => {
     // When any user disconnects, run this...
     console.log("bye!", socket.get("name"));
-    wss.emit("chatMessage", "System", socket.get("name") + " left the chat!");
+    wss.emit("chatMessage", "User ", socket.get("name") + " left the chat!");
 });
 
 // Define middleware here

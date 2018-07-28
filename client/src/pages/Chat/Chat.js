@@ -35,7 +35,9 @@ class Chat extends Component {
         if(auth.isAuthenticated)
         {
             auth.getProfile();
-            this.socket.set("name", localStorage.getItem("name"));
+            let senderName = localStorage.getItem("name");
+            console.log( "Sender Name:" + senderName );
+            this.socket.set("name", senderName);
         }
         else
         {
@@ -67,7 +69,9 @@ class Chat extends Component {
         if(auth.isAuthenticated)
         {
           auth.getProfile();  // Get Profile Info form login
-          this.socket.set("name", localStorage.getItem("name"));
+          let senderName = localStorage.getItem("name");
+          console.log( "Sender Name:" + senderName );
+          this.socket.set("name", senderName);
         }    
         this.socket.emit("chatMessage", this.state.message);
         this.setState({ message: "" });
@@ -78,7 +82,8 @@ class Chat extends Component {
             <div className="chat">
                 <ul>
                     {this.state.messages.map((msg) =>
-                        <li>{msg.from}: {msg.message}</li>)}
+                        <li>{msg.from}: {msg.message}</li>  
+                    )};
                 </ul>
                 <form className="chat-form" onSubmit={this.sendMessage}>
                     <div className="form-group chat-input">

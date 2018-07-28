@@ -14,7 +14,7 @@ body {
 .chat-button{
     width: 10%;
     justify-content: center;
-    margin-left: 150px;
+    margin-left: -15px;
 }
 
 #messages {
@@ -24,7 +24,7 @@ body {
 }
 
 .form-control {
-    width: 98%;
+    width: 95%;
 }
 
 #messages li {
@@ -40,7 +40,7 @@ body {
 }
 
 /* making the page responsive */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 400px) {
      .chat-form{
         flex-flow: column wrap;
     }
