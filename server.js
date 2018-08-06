@@ -112,9 +112,15 @@ wss.on("readFile", function (filename) {
 
 wss.on("connection", (socket, user) => {
     // When any user connects
-    let userName =  ', ' + socket.get("name");
-    socket.set("name", userName);
-    console.log("hello!", userName);
+    let userName = "";
+ //   if(auth.isAuthenticated)
+ //   {
+ //       auth.getProfile();
+    //    userName = localStorage.getItem("name");
+        userName =  ', ' + socket.get("name");
+        socket.set("name", userName);
+        console.log("hello!", userName);
+ //   }
     socket.emit("chatMessage", "Welcome to EMC. Please state your emergency ", socket.get("name") + ".");
 });
 wss.on("disconnect", (socket) => {
