@@ -44,7 +44,6 @@ class App extends Component {
           <Route path={'/status'} render={(history) => <Status auth={auth} {...history} />} />
           <Route path={'/callback'} render={(history) => { handleAuthentication(history); return <Callback {...history} /> }} />
 
-
           <section id="form">
             <div className="container">
               <Form />

@@ -1,14 +1,14 @@
+# EMC
 
-## Project Description
+# Description
 
--Emergency Medical Communication is an application that makes documentation, communication and tracking between Hospitals and Ambulances more efficient and effective. 
+Emergency Medical Communication is an application that makes documentation, communication and tracking between Hospitals and Ambulances more efficient and effective. 
 
-## Deployed Site
+# Deployed Site
 
-[EMC]
-https://emergency-communication.herokuapp.com/
+[EMC](https://emergency-communication.herokuapp.com/) 
 
-## Authors
+# Authors
 
 Farris Aziz
 David Sheppard
@@ -16,7 +16,7 @@ Brandon Triplett
 Kerrick Woyshner
 Mike Wrobel
 
-## Technology Details
+# Technology Details
 
 Technologies utilized in this project inlcude
 - Auth0
@@ -30,22 +30,19 @@ Technologies utilized in this project inlcude
 
 A more comprehensive overview can be found at.
 
-[Project Report]
-https://docs.google.com/document/d/1saCfwGQaDHZs9o4NFp15V596leMRdogayDHVJttj-hk/edit#heading=h.z6ne0og04bp5
+[Project Report](https://docs.google.com/document/d/1saCfwGQaDHZs9o4NFp15V596leMRdogayDHVJttj-hk/edit#heading=h.z6ne0og04bp5)
 
 
-## About the Theme
+# About the Theme
 
-We as a group for the final project wanted to develop an application that would be usefull.
-An inspiration was the discussion with David about his role as a Paramedic.  Some of the methods of cummnications reminded us of some of the means of communications utilized in an an old 1970's TV show (Emergency).   The focus /theme of the project was to develop using modern web techniques, up to date communictions capabilities between the Ambulance and the emergency room.
+We as a group for the final class project wanted to develop an application that would be usefull and serve a purpose that has not allready been addressed.
+An inspiration for us was the discussion with David about his role as a Paramedic.  Some of the methods of cummnications he discussed that were in use today reminded us of some of the means of communications utilized in an an old 1970's TV show (Emergency).   We decided therefore that the focus / theme of the project was to develop using modern web techniques a prototype web-site of how up to date communictions capabilities between the Ambulance and the Emergency Room can be facilitated.
 
-v# Contributons
+# Contributons
 
 This site is part of our personal portfolios and as such direct contributions to the project other than its authors are not accepted an this time.  If you have any suggestions pleaae direct them to me via email (michaelrwrobel@sbcglobal.net) and I will pass it on for consideration by us all.
 
-
-
 -----
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Note: This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
