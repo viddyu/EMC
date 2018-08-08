@@ -1,4 +1,4 @@
-# EMC
+# EMC (Emergency Medical Communications)
 
 # Description
 
@@ -18,7 +18,7 @@ Mike Wrobel
 
 # Technology Details
 
-Technologies utilized in this project inlcude
+Technologies utilized in this project include
 - Auth0
 - React
 - Web Sockets
@@ -36,11 +36,11 @@ A more comprehensive overview can be found at.
 # About the Theme
 
 We as a group for the final class project wanted to develop an application that would be usefull and serve a purpose that has not allready been addressed.
-An inspiration for us was the discussion with David about his role as a Paramedic.  Some of the methods of cummnications he discussed that were in use today reminded us of some of the means of communications utilized in an an old 1970's TV show (Emergency).   We decided therefore that the focus / theme of the project was to develop using modern web techniques a prototype web-site of how up to date communictions capabilities between the Ambulance and the Emergency Room can be facilitated.
+An inspiration for us was the discussion with David about his role as a Paramedic.  Some of the methods of cummnications he discussed that were in use today reminded us of some of the means of communications utilized in an an old 1970's TV show (Emergency).   We decided therefore that the focus / theme of the project would be to develop, using modern web techniques, a prototype web-site illustrating how up to date communictions capabilities between the Ambulance and the Emergency Room can be facilitated.
 
 # Contributons
 
-This site is part of our personal portfolios and as such direct contributions to the project other than its authors are not accepted an this time.  If you have any suggestions pleaae direct them to me via email (michaelrwrobel@sbcglobal.net) and I will pass it on for consideration by us all.
+This site is part of our personal portfolios and as such direct contributions to the project other than its authors are not accepted an this time.  If you have any suggestions pleaae direct them to me via email (michaelrwrobel@sbcglobal.net) and I will pass it on for consideration by the team.
 
 -----
 
