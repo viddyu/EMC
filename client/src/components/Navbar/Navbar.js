@@ -14,7 +14,6 @@ const Navbar = () => (
         </button>
         <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-
                 <li className="nav-item">
                     <div className="navbar-item">
                         <Link to="/login" class="nav-link js-scroll-trigger" href="#login"><i><b>Login</b></i></Link>
